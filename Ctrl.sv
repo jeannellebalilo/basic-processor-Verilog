@@ -18,7 +18,6 @@ module Ctrl (
                      MemWrEn,  // write to mem (store only)
                      ALUEn,    // using ALU
                      Ack,      // "done with program"
-  output logic [1:0] TargSel   // how to target branch (maybe?)
 );
 
 // What follows is instruction decoding.
@@ -28,21 +27,14 @@ module Ctrl (
 
 /*
 OPCODES
-lw -  0000
-lwl - 0001
-sw -  0010
-swl - 0011
-xor - 0100
-add - 0101
-lsr - 0110
-lsl - 0111
+lw -  0000  lwl - 0001
+sw -  0010  swl - 0011
+xor - 0100  add - 0101
+lsr - 0110  lsl - 0111
 mov - 1000
-sne - 1001
-seq - 1010
-boo - 1011
-lut - 1100
-bol - 1101
-msk - 1110
+sne - 1001  seq - 1010
+boo - 1011  lut - 1100
+bol - 1101  msk - 1110
 */
 
 assign Opcode = Instruction[8:5];
@@ -53,45 +45,54 @@ assign Ack = &Instruction;
 // jump on right shift that generates a zero
 // equiv to simply: assign Jump = Instruction[2:0] == RSH;
 always_comb begin
+  BranchEn = 0;
+  RegWrEn = 0;
+  MemWrEn = 0;
+  ALUEn = 0;
   case (Opcode)
     0000: RegWrEn = 1;
-
     0001: RegWrEn = 1;
-
     0010: MemWrEn = 1;
-
     0011: MemWrEn = 1;
-
-    0100: ALUEn = 1;
-
-    0101: ALUEn = 1;
-
-    0110: ALUEn = 1;
-
-    0111: ALUEn = 1;
-
-    1000: 
-
-    1001: ALUEn = 1;
-
-    1010: ALUEn = 1;
-
+    0100: begin
+      ALUEn = 1;
+      RegWrEn = 1;
+    end
+    0101: begin
+      ALUEn = 1;
+      RegWrEn = 1;
+    end
+    0110: begin
+      ALUEn = 1;
+      RegWrEn = 1;
+    end
+    0111: begin
+      ALUEn = 1;
+      RegWrEn = 1;
+    end
+    1000: RegWrEn = 1;
+    1001: begin
+      ALUEn = 1;
+      RegWrEn = 1;
+    end
+    1010: begin
+      ALUEn = 1;
+      RegWrEn = 1;
+    end
     1011: BranchEn = 1;
-
-    1100:
-
+    1100: 
     1101: BranchEn = 1;
-
-    1110: ALUEn = 1;
-
-    default: 
+    1110:begin
+      ALUEn = 1;
+      RegWrEn = 1;
+    end
+    default: begin
+      RegWrEn = 0;
+      BranchEn = 0;
+      ALUEn = 0;
+      MemWrEn = 0;
+    end
   endcase
 end
-
-// branch every time instruction = 9'b?????1111;
-assign BranchEn = &Instruction[3:0];
-
-// Maybe define specific types of branches?
-assign TargSel  = Instruction[3:2];
 
 endmodule
