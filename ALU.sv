@@ -21,19 +21,45 @@ module ALU #(parameter W=8, Ops=3)(
 
 // type enum: used for convenient waveform viewing
 op_mne op_mnemonic;
-
+assign difference = InputA - InputB;
+assign mask = 8b'0;
 always_comb begin
   // No Op = default
   Out = 0;
 
   case(OP)
-    ADD : Out = InputA + InputB;        // add 
-    LSH : Out = {InputA[6:0],SC_in};    // shift left, fill in with SC_in
-    // for logical left shift, tie SC_in = 0
-    RSH : Out = {1'b0, InputA[7:1]};    // shift right
+    ADD : Out = InputA + InputB;        // add
+
+    // lsl will loop, inserting 0's on the right for InputB (immediate) amount of times
+    LSL : begin
+      repeat (InputB) begin
+        InputA = {InputA[6:0], 1'b0};
+      end
+      Out = InputA;
+    end
+
+    // lsr will loop, inserting 0's on the left for InputB (immediate) amount of times
+    LSR : begin
+      repeat (InputB) begin
+        InputA = {1'b0, InputA[7:1]}
+      end
+      Out = InputA;
+    end
     XOR : Out = InputA ^ InputB;        // bitwise exclusive OR
-    AND : Out = InputA & InputB;        // bitwise AND
-    SUB : Out = InputA + (~InputB) + 1;
+    SNE : begin
+      if (difference > 0) begin
+        Out = 1'b1;
+      end
+    end
+    SEQ : begin
+      if (difference == 0) begin
+        Out = 1'b1;
+      end
+    end
+
+    // TODO: implement msk instruction
+    // MSK : 
+        
     default : Out = 8'bxxxx_xxxx;       // Quickly flag illegal ALU
   endcase
 end
