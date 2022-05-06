@@ -48,12 +48,12 @@ package Definitions;
    // e.g. enum names will appear in timing diagrams
    typedef enum logic [2:0] {
        ADD,
-       LSH,
-       RSH,
+       LSL,
+       LSR,
        XOR,
-       AND,
-       SUB,
-       CLR
+       SNE,
+       SEQ,
+       MSK
    } op_mne;
 
 endpackage // Definitions
