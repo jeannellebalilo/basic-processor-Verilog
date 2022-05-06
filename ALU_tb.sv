@@ -48,19 +48,45 @@ initial begin
 
   INPUTA = 4;
   INPUTB = 1;
-  op= 'b100; // AND
+  op= 'b001; // LSL
   test_alu_func; // void function call
   #5;
+
+  INPUTA = 4;
+  INPUTB = 1;
+  op= 'b010; // LSR
+  test_alu_func;
+
+  INPUTA = 2
+  INPUTB = 6
+  op= 'b011; // XOR
+  test_alu_func;
+
+  INPUTA = 0;
+  INPUTB = 1;
+  op= 'b100; // SNE
+  test_alu_func;
+
+  INPUTA = 5;
+  INPUTB = 5;
+  op= 'b101; // SEQ
+  test_alu_func;
+
+  INPUTA = 7;
+  INPUTB = 2;
+  op= 'b110;  // MSK
+  test_alu_func;
 end
 
 task test_alu_func;
   case (op)
     0: expected = INPUTA + INPUTB;      // ADD
-    1: expected = {INPUTA[6:0], SC_IN}; // LSH
-    2: expected = {1'b0, INPUTA[7:1]};  // RSH
+    1: expected = {INPUTA[6:0], SC_IN}; // LSL
+    2: expected = {1'b0, INPUTA[7:1]};  // LSR
     3: expected = INPUTA ^ INPUTB;      // XOR
-    4: expected = INPUTA & INPUTB;      // AND
-    5: expected = INPUTA - INPUTB;      // SUB
+    4: expected = 1                     // SNE
+    5: expected = 1                     // SEQ
+    6: expected = 4                     // MSK
   endcase
   #1;
   if(expected == OUT) begin

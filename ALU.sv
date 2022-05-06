@@ -22,7 +22,7 @@ module ALU #(parameter W=8, Ops=3)(
 // type enum: used for convenient waveform viewing
 op_mne op_mnemonic;
 assign difference = InputA - InputB;
-assign mask = 8b'0;
+assign mask = 8b'1;
 always_comb begin
   // No Op = default
   Out = 0;
@@ -46,20 +46,31 @@ always_comb begin
       Out = InputA;
     end
     XOR : Out = InputA ^ InputB;        // bitwise exclusive OR
+
     SNE : begin
-      if (difference > 0) begin
+      if (difference != 0) begin
         Out = 1'b1;
+      end
+      else begin
+        Out = 1'b0;
       end
     end
     SEQ : begin
       if (difference == 0) begin
         Out = 1'b1;
       end
+      else begin
+        Out = 1'b0;
+      end
     end
 
-    // TODO: implement msk instruction
-    // MSK : 
-        
+    MSK : begin
+      // if InputB = 6, we want the output to look like 0X00_0000
+      repeat (InputB) begin
+        mask = {mask[6:0], 1'b0};
+      end
+      Out = InputA ^ mask;
+    end
     default : Out = 8'bxxxx_xxxx;       // Quickly flag illegal ALU
   endcase
 end
