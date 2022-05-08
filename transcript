@@ -1,0 +1,86 @@
+# Compile of ALU.sv failed with 5 errors.
+# Compile of ALU_tb.sv failed with 2 errors.
+# Compile of Ctrl.sv failed with 2 errors.
+# Compile of DataMem.sv was successful.
+# Compile of Definitions.sv was successful.
+# Compile of FinalSubmission_tb.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of LUT.sv was successful.
+# Compile of ProgCtr.sv was successful.
+# Compile of ProgCtr_tb.sv was successful.
+# Compile of RegFile.sv was successful.
+# Compile of TopLevel.sv was successful.
+# Compile of TopLevel_tb.sv was successful.
+# 13 compiles, 3 failed with 9 errors.
+# Compile of ALU.sv failed with 1 errors.
+# Compile of ALU.sv failed with 4 errors.
+# Compile of ALU.sv failed with 3 errors.
+# Compile of ALU.sv failed with 1 errors.
+# Compile of ALU.sv failed with 1 errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful.
+# Compile of Ctrl.sv was successful.
+vsim work.ALU_tb
+# vsim work.ALU_tb 
+# Start time: 11:57:13 on May 08,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 8, found 6.
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2718) [TFMPC] - Missing connection for port 'Odd'.
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2718) [TFMPC] - Missing connection for port 'Parity'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.Definitions(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU_tb(fast)
+add wave -position insertpoint sim:/ALU_tb/*
+# ** UI-Msg: (vish-4014) No objects found matching '/ALU_tb/*'.
+add wave -position insertpoint sim:/Definitions/*
+# ** UI-Msg: (vish-4014) No objects found matching '/Definitions/*'.
+add wave -position insertpoint sim:/Definitions::op_mne/*
+# ** UI-Msg: (vish-4014) No objects found matching '/Definitions::op_mne/*'.
+add wave -position insertpoint sim:/ALU_sv_unit/*
+# ** UI-Msg: (vish-4014) No objects found matching '/ALU_sv_unit/*'.
+add wave -position insertpoint sim:/ALU_tb/test_alu_func/*
+# ** UI-Msg: (vish-4014) No objects found matching '/ALU_tb/test_alu_func/*'.
+run
+quit -sim
+# End time: 12:07:41 on May 08,2022, Elapsed time: 0:10:28
+# Errors: 0, Warnings: 13
+vsim work.ALU_tb
+# vsim work.ALU_tb 
+# Start time: 12:12:04 on May 08,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.Definitions(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU_tb(fast)
+add wave -position insertpoint sim:/ALU_tb/*
+# ** UI-Msg: (vish-4014) No objects found matching '/ALU_tb/*'.
+quit -sim
+# End time: 12:14:01 on May 08,2022, Elapsed time: 0:01:57
+# Errors: 0, Warnings: 1
+vsim work.ALU_tb -voptargs=+acc
+# vsim work.ALU_tb -voptargs="+acc" 
+# Start time: 12:17:16 on May 08,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 8, found 6.
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2718) [TFMPC] - Missing connection for port 'Odd'.
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2718) [TFMPC] - Missing connection for port 'Parity'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.ALU_tb(fast)
+# Loading work.Definitions(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+add wave -position insertpoint  \
+sim:/ALU_tb/INPUTA \
+sim:/ALU_tb/INPUTB \
+sim:/ALU_tb/op \
+sim:/ALU_tb/SC_IN \
+sim:/ALU_tb/OUT \
+sim:/ALU_tb/Zero \
+sim:/ALU_tb/expected
+run
+quit -sim
+# End time: 12:37:07 on May 08,2022, Elapsed time: 0:19:51
+# Errors: 0, Warnings: 4

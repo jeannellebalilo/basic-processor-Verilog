@@ -9,7 +9,7 @@
 // any-depth `reg_file`: just override the params!
 //   W = data path width          <-- [WI22 Requirement: max(W)=8]
 //   A = address pointer width    <-- [WI22 Requirement: max(A)=4]
-module RegFile #(parameter W=8, A=4)(
+module RegFile #(parameter W=8, A=2)(
   input                Clk,
   input                Reset,
   input                WriteEn,
@@ -23,6 +23,7 @@ module RegFile #(parameter W=8, A=4)(
 
 
 // W bits wide [W-1:0] and 2**A registers deep
+// NOTE: we have 4 registers
 //   When W=8 bit wide registers and A=4 to address 16 registers
 //   then this could be written `logic [7:0] registers[16]`
 logic [W-1:0] Registers[2**A];
@@ -36,15 +37,17 @@ logic [W-1:0] Registers[2**A];
 
 // This is ARM-style registers (i.e. r0 is general purpose)
 assign      DataOutA = Registers[RaddrA];
+assign      DataOutB = Registers[RaddrB];
 
 // This is MIPS-style registers (i.e. r0 is always read-as-zero)
-always_comb begin
+/*always_comb begin
   if (RaddrB == 0) begin
     DataOutB = 0;
   end else begin
     DataOutB = Registers[RaddrB];
   end
 end
+*/
 
 // FIXME: ^^ Careful! ^^
 //   You probably don't want different register output

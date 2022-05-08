@@ -17,7 +17,7 @@ module Ctrl (
                      RegWrEn,  // write to reg_file (common)
                      MemWrEn,  // write to mem (store only)
                      ALUEn,    // using ALU
-                     Ack,      // "done with program"
+                     Ack      // "done with program"
 );
 
 // What follows is instruction decoding.
@@ -80,7 +80,7 @@ always_comb begin
       RegWrEn = 1;
     end
     1011: BranchEn = 1;
-    1100: 
+    // 1100: 
     1101: BranchEn = 1;
     1110:begin
       ALUEn = 1;

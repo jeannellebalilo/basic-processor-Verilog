@@ -57,8 +57,8 @@ initial begin
   op= 'b010; // LSR
   test_alu_func;
 
-  INPUTA = 2
-  INPUTB = 6
+  INPUTA = 2;
+  INPUTB = 6;
   op= 'b011; // XOR
   test_alu_func;
 
@@ -84,9 +84,9 @@ task test_alu_func;
     1: expected = {INPUTA[6:0], SC_IN}; // LSL
     2: expected = {1'b0, INPUTA[7:1]};  // LSR
     3: expected = INPUTA ^ INPUTB;      // XOR
-    4: expected = 1                     // SNE
-    5: expected = 1                     // SEQ
-    6: expected = 4                     // MSK
+    4: expected = 1;                     // SNE
+    5: expected = 1;                     // SEQ
+    6: expected = 4;                     // MSK
   endcase
   #1;
   if(expected == OUT) begin

@@ -22,7 +22,7 @@ module ALU #(parameter W=8, Ops=3)(
 // type enum: used for convenient waveform viewing
 op_mne op_mnemonic;
 assign difference = InputA - InputB;
-assign mask = 8b'1;
+assign mask = 8'b1;
 always_comb begin
   // No Op = default
   Out = 0;
@@ -32,16 +32,18 @@ always_comb begin
 
     // lsl will loop, inserting 0's on the right for InputB (immediate) amount of times
     LSL : begin
+      Out = InputA;
       repeat (InputB) begin
-        InputA = {InputA[6:0], 1'b0};
+        Out = {Out[6:0], 1'b0};
       end
       Out = InputA;
     end
 
     // lsr will loop, inserting 0's on the left for InputB (immediate) amount of times
     LSR : begin
+      Out = InputA;
       repeat (InputB) begin
-        InputA = {1'b0, InputA[7:1]}
+        Out = {1'b0, Out[7:1]};
       end
       Out = InputA;
     end
@@ -66,10 +68,11 @@ always_comb begin
 
     MSK : begin
       // if InputB = 6, we want the output to look like 0X00_0000
+      Out = mask;
       repeat (InputB) begin
-        mask = {mask[6:0], 1'b0};
+        Out = {Out[6:0], 1'b0};
       end
-      Out = InputA ^ mask;
+      Out = InputA ^ Out;
     end
     default : Out = 8'bxxxx_xxxx;       // Quickly flag illegal ALU
   endcase
