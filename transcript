@@ -84,3 +84,252 @@ run
 quit -sim
 # End time: 12:37:07 on May 08,2022, Elapsed time: 0:19:51
 # Errors: 0, Warnings: 4
+# Compile of ALU_tb.sv was successful.
+# Compile of ProgCtr.sv was successful.
+# Compile of RegFile.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.ALU_tb
+# vsim -voptargs="+acc" work.ALU_tb 
+# Start time: 15:47:25 on May 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 8, found 6.
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2718) [TFMPC] - Missing connection for port 'Odd'.
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2718) [TFMPC] - Missing connection for port 'Parity'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.ALU_tb(fast)
+# Loading work.Definitions(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+add wave -position insertpoint  \
+sim:/ALU_tb/INPUTA \
+sim:/ALU_tb/INPUTB \
+sim:/ALU_tb/op \
+sim:/ALU_tb/SC_IN \
+sim:/ALU_tb/OUT \
+sim:/ALU_tb/Zero \
+sim:/ALU_tb/expected
+run
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful.
+# Compile of Ctrl.sv was successful.
+# Compile of DataMem.sv was successful.
+# Compile of Definitions.sv was successful.
+# Compile of FinalSubmission_tb.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of LUT.sv was successful.
+# Compile of ProgCtr.sv was successful.
+# Compile of ProgCtr_tb.sv was successful.
+# Compile of RegFile.sv was successful.
+# Compile of TopLevel.sv was successful.
+# Compile of TopLevel_tb.sv was successful.
+# 13 compiles, 0 failed with no errors.
+run
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful.
+# Compile of Ctrl.sv was successful.
+# Compile of DataMem.sv was successful.
+# Compile of Definitions.sv was successful.
+# Compile of FinalSubmission_tb.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of LUT.sv was successful.
+# Compile of ProgCtr.sv was successful.
+# Compile of ProgCtr_tb.sv was successful.
+# Compile of RegFile.sv was successful.
+# Compile of TopLevel.sv was successful.
+# Compile of TopLevel_tb.sv was successful.
+# 13 compiles, 0 failed with no errors.
+run
+run
+quit -sim
+# End time: 15:57:58 on May 08,2022, Elapsed time: 0:10:33
+# Errors: 0, Warnings: 7
+# Compile of ALU_tb.sv was successful.
+vsim -voptargs=+acc work.ALU_tb
+# vsim -voptargs="+acc" work.ALU_tb 
+# Start time: 08:31:26 on May 09,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 8, found 6.
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2718) [TFMPC] - Missing connection for port 'Odd'.
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2718) [TFMPC] - Missing connection for port 'Parity'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.ALU_tb(fast)
+# Loading work.Definitions(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+add wave -position insertpoint  \
+sim:/ALU_tb/INPUTA \
+sim:/ALU_tb/INPUTB \
+sim:/ALU_tb/op \
+sim:/ALU_tb/SC_IN \
+sim:/ALU_tb/OUT \
+sim:/ALU_tb/Zero \
+sim:/ALU_tb/expected
+run
+quit -sim
+# End time: 08:32:06 on May 09,2022, Elapsed time: 0:00:40
+# Errors: 0, Warnings: 5
+# Compile of ALU_tb.sv was successful.
+vsim -voptargs=+acc work.ALU_tb
+# vsim -voptargs="+acc" work.ALU_tb 
+# Start time: 08:35:30 on May 09,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 8, found 6.
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2718) [TFMPC] - Missing connection for port 'Odd'.
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2718) [TFMPC] - Missing connection for port 'Parity'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.ALU_tb(fast)
+# Loading work.Definitions(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+add wave -position insertpoint  \
+sim:/ALU_tb/INPUTA \
+sim:/ALU_tb/INPUTB \
+sim:/ALU_tb/op \
+sim:/ALU_tb/SC_IN \
+sim:/ALU_tb/OUT \
+sim:/ALU_tb/Zero \
+sim:/ALU_tb/expected
+run
+run -all
+#                 1000 FAIL! inputs = 04 01, opcode = 001, zero 0
+#                 7000 FAIL! inputs = 04 01, opcode = 010, zero 0
+#                13000 YAY!! inputs = 02 06, opcode = 011, Zero 0
+#                19000 YAY!! inputs = 00 01, opcode = 100, Zero 0
+#                25000 YAY!! inputs = 05 05, opcode = 101, Zero 0
+#                31000 FAIL! inputs = 07 02, opcode = 110, zero 0
+#                37000 FAIL! inputs = 07 02, opcode = 110, zero 0
+# Compile of ALU_tb.sv was successful.
+quit -sim
+# End time: 08:46:35 on May 09,2022, Elapsed time: 0:11:05
+# Errors: 0, Warnings: 6
+vsim -voptargs=+acc work.ALU_tb
+# vsim -voptargs="+acc" work.ALU_tb 
+# Start time: 08:46:43 on May 09,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 8, found 6.
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2718) [TFMPC] - Missing connection for port 'Odd'.
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2718) [TFMPC] - Missing connection for port 'Parity'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.ALU_tb(fast)
+# Loading work.Definitions(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+add wave sim:/ALU_tb/*
+run -all
+#                 1000 YAY!! inputs = 01 01, opcode = 000, Zero 0
+#                 7000 FAIL! inputs = 04 01, opcode = 001, zero 0
+#                13000 FAIL! inputs = 04 01, opcode = 010, zero 0
+#                19000 YAY!! inputs = 02 06, opcode = 011, Zero 0
+#                25000 YAY!! inputs = 00 01, opcode = 100, Zero 0
+#                31000 YAY!! inputs = 05 05, opcode = 101, Zero 0
+#                37000 FAIL! inputs = 07 02, opcode = 110, zero 0
+#                43000 FAIL! inputs = 07 02, opcode = 110, zero 0
+# Compile of ALU.sv failed with 1 errors.
+# Compile of ALU_tb.sv was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of ALU.sv was successful.
+run -all
+restart -f
+# Closing VCD file "alu.vcd"
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.ALU_tb(fast)
+# Loading work.Definitions(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+run -all
+#                 1000 YAY!! inputs = 01 01, opcode = 000, Zero 0
+#                 7000 FAIL! inputs = 04 01, opcode = 001, zero 0
+#                13000 FAIL! inputs = 04 01, opcode = 010, zero 0
+#                19000 YAY!! inputs = 02 06, opcode = 011, Zero 0
+#                25000 YAY!! inputs = 00 01, opcode = 100, Zero 0
+#                31000 YAY!! inputs = 05 05, opcode = 101, Zero 0
+#                37000 FAIL! inputs = 07 02, opcode = 110, zero 0
+#                43000 FAIL! inputs = 07 02, opcode = 110, zero 0
+restart -f
+# Closing VCD file "alu.vcd"
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.ALU_tb(fast)
+# Loading work.Definitions(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Compile of ALU.sv was successful.
+# Load canceled
+run -all
+#                 1000 YAY!! inputs = 01 01, opcode = 000, Zero 0
+#                 7000 FAIL! inputs = 04 01, opcode = 001, zero 0
+#                13000 FAIL! inputs = 04 01, opcode = 010, zero 0
+#                19000 YAY!! inputs = 02 06, opcode = 011, Zero 0
+#                25000 YAY!! inputs = 00 01, opcode = 100, Zero 0
+#                31000 YAY!! inputs = 05 05, opcode = 101, Zero 0
+#                37000 FAIL! inputs = 07 02, opcode = 110, zero 0
+#                43000 FAIL! inputs = 07 02, opcode = 110, zero 0
+quit -sim
+# End time: 09:08:31 on May 09,2022, Elapsed time: 0:21:48
+# Errors: 0, Warnings: 2
+vsim -voptargs=+acc work.ALU_tb
+# vsim -voptargs="+acc" work.ALU_tb 
+# Start time: 09:08:44 on May 09,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.ALU_tb(fast)
+# Loading work.Definitions(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+add wave -position insertpoint  \
+sim:/ALU_tb/INPUTA \
+sim:/ALU_tb/INPUTB \
+sim:/ALU_tb/op \
+sim:/ALU_tb/SC_IN \
+sim:/ALU_tb/OUT \
+sim:/ALU_tb/Zero \
+sim:/ALU_tb/expected
+run -all
+#                 1000 YAY!! inputs = 01 01, opcode = 000, Zero 0
+#                 7000 YAY!! inputs = 04 01, opcode = 001, Zero 0
+#                13000 YAY!! inputs = 04 01, opcode = 010, Zero 0
+#                19000 YAY!! inputs = 02 06, opcode = 011, Zero 0
+#                25000 YAY!! inputs = 00 01, opcode = 100, Zero 0
+#                31000 YAY!! inputs = 05 05, opcode = 101, Zero 0
+#                37000 FAIL! inputs = 07 02, opcode = 110, zero 0
+#                43000 FAIL! inputs = 07 02, opcode = 110, zero 0
+quit -sim
+# End time: 09:11:31 on May 09,2022, Elapsed time: 0:02:47
+# Errors: 0, Warnings: 1
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.ALU_tb
+# vsim -voptargs="+acc" work.ALU_tb 
+# Start time: 09:11:46 on May 09,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 8, found 6.
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2718) [TFMPC] - Missing connection for port 'Odd'.
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv(31): (vopt-2718) [TFMPC] - Missing connection for port 'Parity'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.ALU_tb(fast)
+# Loading work.Definitions(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+add wave -position insertpoint  \
+sim:/ALU_tb/INPUTA \
+sim:/ALU_tb/INPUTB \
+sim:/ALU_tb/op \
+sim:/ALU_tb/SC_IN \
+sim:/ALU_tb/OUT \
+sim:/ALU_tb/Zero \
+sim:/ALU_tb/expected
+run -all
+#                 1000 YAY!! inputs = 01 01, opcode = 000, Zero 0
+#                 7000 YAY!! inputs = 04 01, opcode = 001, Zero 0
+#                13000 YAY!! inputs = 04 01, opcode = 010, Zero 0
+#                19000 YAY!! inputs = 02 06, opcode = 011, Zero 0
+#                25000 YAY!! inputs = 00 01, opcode = 100, Zero 0
+#                31000 YAY!! inputs = 05 05, opcode = 101, Zero 0
+#                37000 YAY!! inputs = 07 02, opcode = 110, Zero 0

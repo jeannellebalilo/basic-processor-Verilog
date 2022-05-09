@@ -56,26 +56,32 @@ initial begin
   INPUTB = 1;
   op= 'b010; // LSR
   test_alu_func;
+  #5;
 
   INPUTA = 2;
   INPUTB = 6;
   op= 'b011; // XOR
   test_alu_func;
+  #5;
 
   INPUTA = 0;
   INPUTB = 1;
   op= 'b100; // SNE
   test_alu_func;
+  #5;
 
   INPUTA = 5;
   INPUTB = 5;
   op= 'b101; // SEQ
   test_alu_func;
+  #5;
 
   INPUTA = 7;
   INPUTB = 2;
   op= 'b110;  // MSK
   test_alu_func;
+  #5;
+
 end
 
 task test_alu_func;

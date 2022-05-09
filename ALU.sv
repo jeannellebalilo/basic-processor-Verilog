@@ -23,6 +23,7 @@ module ALU #(parameter W=8, Ops=3)(
 op_mne op_mnemonic;
 assign difference = InputA - InputB;
 assign mask = 8'b1;
+assign loop = InputB;
 always_comb begin
   // No Op = default
   Out = 0;
@@ -33,10 +34,9 @@ always_comb begin
     // lsl will loop, inserting 0's on the right for InputB (immediate) amount of times
     LSL : begin
       Out = InputA;
-      repeat (InputB) begin
+      repeat (loop) begin
         Out = {Out[6:0], 1'b0};
       end
-      Out = InputA;
     end
 
     // lsr will loop, inserting 0's on the left for InputB (immediate) amount of times
@@ -45,7 +45,6 @@ always_comb begin
       repeat (InputB) begin
         Out = {1'b0, Out[7:1]};
       end
-      Out = InputA;
     end
     XOR : Out = InputA ^ InputB;        // bitwise exclusive OR
 
@@ -72,7 +71,6 @@ always_comb begin
       repeat (InputB) begin
         Out = {Out[6:0], 1'b0};
       end
-      Out = InputA ^ Out;
     end
     default : Out = 8'bxxxx_xxxx;       // Quickly flag illegal ALU
   endcase
