@@ -26,7 +26,8 @@ module InstROM #(parameter A=10, W=9) (
 // written or any way of automatically generating machine code.
 //
 // This is usually the fastest / easiest way to test individual instructions.
-/*
+// ---------------- ENABLED APPROACH 1 FOR TESTING PURPOSES  ----------------
+
 always_comb begin 
   InstOut = 'b000_000_000;       // default
   case (InstAddress)
@@ -35,6 +36,7 @@ always_comb begin
     // MEM[0] = 16
     // MEM[16] = 254
 
+    /*
     // opcode = 3 load, rs = 1, rt = 0, reg[rs] = mem[reg[rt]]
     0 : InstOut = 'b011_001_000; // load from address at reg 0 to reg 1
                                  // Effect: R1 = #16 (b/c MEM[#0] was #16)
@@ -53,12 +55,17 @@ always_comb begin
 
     // opcode = 15 halt
     4 : InstOut = '1;  // equiv to 10'b1111111111 or 'b1111111111    halt
+    */
 
     // (default case already covered by opening statement)
+
+    0 : InstOut = 'b000_001_100;   // lw r1, r2
+    1 : InstOut = 'b000_101_000;   // lwl r1, #0
+    2 : InstOut = 'b010_101_010;   // add r1, #2
+    3 : InstOut = 'b001_001_100;   // sw, r1, r2
+    4 : InstOut = '1;
   endcase
 end
-*/
-
 
 // Approach 2: Create an actual instruction memory, and populate it
 // from an external file.
@@ -67,8 +74,10 @@ end
 // start testing your actual program implementations on your core,
 // rather than individual instructions.
 
+// ----------------  COMMENTED OUT APPROACH 2 FOR NOW  ----------------
 
 // Declare 2-dimensional array, W bits wide, 2**A words deep
+/*
 logic [W-1:0] inst_rom[2**A];
 
 // This is where memory is read
@@ -87,6 +96,6 @@ initial begin
   // try this on your machine most likely:
   //$readmemb("//vmware-host/Shared Folders/Downloads/basic_proc2/machine_code.txt", inst_rom);
 end
-
+*/
 
 endmodule

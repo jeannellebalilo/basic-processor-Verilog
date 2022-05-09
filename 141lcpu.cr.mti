@@ -35,13 +35,6 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 Top level modules:
 	TopLevel
 
-} {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/InstROM.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/InstROM.sv}
-Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module InstROM
-
-Top level modules:
-	InstROM
-
 } {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/Ctrl.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/Ctrl.sv}
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling package Ctrl_sv_unit
@@ -58,12 +51,12 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 Top level modules:
 	LUT
 
-} {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/RegFile.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/RegFile.sv}
+} {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ProgCtr_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:\Users\jeann\Desktop\141LTermProject\basic processor Verilog\ProgCtr_tb.sv}
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module RegFile
+-- Compiling module ProgCtr_tb
 
 Top level modules:
-	RegFile
+	ProgCtr_tb
 
 } {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv}
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021

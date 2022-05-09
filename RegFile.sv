@@ -39,6 +39,7 @@ logic [W-1:0] Registers[2**A];
 assign      DataOutA = Registers[RaddrA];
 assign      DataOutB = Registers[RaddrB];
 
+// commented out code below, we won't be needing it.
 // This is MIPS-style registers (i.e. r0 is always read-as-zero)
 /*always_comb begin
   if (RaddrB == 0) begin
