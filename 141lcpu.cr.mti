@@ -1,25 +1,9 @@
-{C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv}
-Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module ALU_tb
-
-Top level modules:
-	ALU_tb
-
-} {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ProgCtr.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ProgCtr.sv}
+{C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ProgCtr.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ProgCtr.sv}
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling module ProgCtr
 
 Top level modules:
 	ProgCtr
-
-} {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU.sv}
-Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling package ALU_sv_unit
--- Importing package Definitions
--- Compiling module ALU
-
-Top level modules:
-	ALU
 
 } {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/FinalSubmission_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/FinalSubmission_tb.sv}
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
@@ -27,13 +11,6 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 
 Top level modules:
 	FinalSubmission_tb
-
-} {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv}
-Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module TopLevel
-
-Top level modules:
-	TopLevel
 
 } {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/Ctrl.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/Ctrl.sv}
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
@@ -71,12 +48,5 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 
 Top level modules:
 	DataMem
-
-} {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/Definitions.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/Definitions.sv}
-Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling package Definitions
-
-Top level modules:
-	--none--
 
 } {} {}}

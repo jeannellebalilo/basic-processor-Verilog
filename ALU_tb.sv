@@ -19,7 +19,7 @@ module ALU_tb;
 // Define signals to interface with the ALU module
 logic [ 7:0] INPUTA;  // data inputs
 logic [ 7:0] INPUTB;
-logic [ 2:0] op;      // ALU opcode, part of microcode
+logic [ 3:0] op;      // ALU opcode, part of microcode
 bit SC_IN = 'b0;
 wire[ 7:0] OUT;
 wire Zero;

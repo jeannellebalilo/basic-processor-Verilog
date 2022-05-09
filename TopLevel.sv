@@ -44,11 +44,12 @@ wire [ 9:0] PC1_ProgCtr_out;  // the program counter
 wire [ 9:0] LUT1_Target_out;  // Target of branch/jump
 
 // Control block outputs
-logic       Ctrl1_Jump_out;      // to program counter: jump
+//logic       Ctrl1_Jump_out;      // to program counter: jump
 logic       Ctrl1_BranchEn_out;  // to program counter: branch enable
 logic       Ctrl1_RegWrEn_out;   // reg_file write enable
 logic       Ctrl1_MemWrEn_out;   // data_memory write enable
-logic       Ctrl1_LoadInst_out;  // TODO: Why both of these?
+logic       Ctrl1_ALUEn_out;
+//logic       Ctrl1_LoadInst_out;  // TODO: Why both of these?
 logic       Ctrl1_Ack_out;       // Done with program?
 logic [1:0] Ctrl1_TargSel_out;   // one trick to help with target range
 
@@ -162,24 +163,25 @@ end
 // Control decoder
 Ctrl Ctrl1 (
   .Instruction  (Active_InstOut),     // from instr_ROM
-  .Jump         (Ctrl1_Jump_out),     // to PC to handle jump/branch instructions
+  //.Jump         (Ctrl1_Jump_out),     // to PC to handle jump/branch instructions
   .BranchEn     (Ctrl1_BranchEn_out), // to PC
   .RegWrEn      (Ctrl1_RegWrEn_out),  // register file write enable
   .MemWrEn      (Ctrl1_MemWrEn_out),  // data memory write enable
-  .LoadInst     (Ctrl1_LoadInst_out), // selects memory vs ALU output as data input to reg_file
+  .ALUEn        (Ctrl1_ALUEn_out),
+  //.LoadInst     (Ctrl1_LoadInst_out), // selects memory vs ALU output as data input to reg_file
   .Ack          (Ctrl1_Ack_out),      // "done" flag
   .TargSel      (Ctrl1_TargSel_out)   // index into lookup table
 );
 
 // Register file
-// A(3) makes this 2**3=8 elements deep
+// A(2) makes this 2**2=4 elements deep
 RegFile #(.W(8),.A(3)) RF1 (
   .Clk       (Clk),
   .Reset     (Reset),
   .WriteEn   (Ctrl1_RegWrEn_out),
-  .RaddrA    (Active_InstOut[5:3]),      // See example below on how 3 opcode bits
-  .RaddrB    (Active_InstOut[2:0]),      // could address 16 registers...
-  .Waddr     (Active_InstOut[5:3]),      // mux above
+  .RaddrA    (Active_InstOut[4:3]),      // See example below on how 3 opcode bits
+  .RaddrB    (Active_InstOut[2:1]),      // could address 16 registers...
+  .Waddr     (Active_InstOut[4:3]),      // mux above
   .DataIn    (ExMem_RegValue_out),
   .DataOutA  (RF1_DataOutA_out),
   .DataOutB  (RF1_DataOutB_out)
