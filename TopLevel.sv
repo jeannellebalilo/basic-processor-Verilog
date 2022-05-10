@@ -237,7 +237,7 @@ DataMem DM1(
 // An output mux from this block, are we using the ALU result or the memory
 // result this cycle?  Controlled by Ctrl1 -- must be high for load from
 // data_mem; otherwise usually low
-assign ExMem_RegValue_out = Ctrl1_LoadInst_out ? DM1_DataOut_out : ALU1_Out_out;
+// assign ExMem_RegValue_out = Ctrl1_LoadInst_out ? DM1_DataOut_out : ALU1_Out_out;
 //////////////////////////////////////////////////////////// Execute + Memory //
 
 

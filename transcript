@@ -63,3 +63,15 @@ run -all
 # Checking that no branch advanced by 1
 # Checking that branch went to target
 # All checks passed.
+quit -sim
+# End time: 17:04:45 on May 09,2022, Elapsed time: 5:34:56
+# Errors: 0, Warnings: 1
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful.
+# Compile of Definitions.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of LUT.sv was successful.
+# Compile of RegFile.sv was successful.
+# Compile of TopLevel.sv failed with 1 errors.
+# 7 compiles, 1 failed with 1 error.
+# Compile of TopLevel.sv was successful.
