@@ -1,0 +1,3 @@
+# Basic System Verilog Processor
+## Navigating the code:
+#### Our code follows the starter code pretty exactly. The notable difference in our code is the use of three different LUT modules. LUT_pc is one that would be populated through a text file for common branch locations specific to each program. LUT_dm is used to map to 8 distinct locations in data memory that would be used to store the most-used temp variables. LUT_2x_dm is similar to LUT_dm, however it is a two level LUT, using a mux to decide on the two halves of the LUT and a register to specify which entry in that LUT.
