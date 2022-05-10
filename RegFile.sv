@@ -31,33 +31,9 @@ logic [W-1:0] Registers[2**A];
 
 // combinational reads
 //
-// Could write `always_comb` block in place of assign
-//   difference: assign is limited to one line of code,
-//   so `always_comb` is much more versatile
-
 // This is ARM-style registers (i.e. r0 is general purpose)
 assign      DataOutA = Registers[RaddrA];
 assign      DataOutB = Registers[RaddrB];
-
-// commented out code below, we won't be needing it.
-// This is MIPS-style registers (i.e. r0 is always read-as-zero)
-/*always_comb begin
-  if (RaddrB == 0) begin
-    DataOutB = 0;
-  end else begin
-    DataOutB = Registers[RaddrB];
-  end
-end
-*/
-
-// FIXME: ^^ Careful! ^^
-//   You probably don't want different register output
-//   ports to behave differently in your final design!!
-//
-//   ... or maybe you do, can be a neat trick for more
-//   compact encoding to have them behave different...
-//   (but almost certainly not exactly like this)
-
 
 // sequential (clocked) writes
 //
