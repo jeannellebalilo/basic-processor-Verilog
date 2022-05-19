@@ -9,19 +9,24 @@
 // Lots of potential applications of LUTs!!
 
 // You might consider parameterizing this!
-module LUT(
-  input        [ 1:0] Addr,
-  output logic [ 9:0] Target
+module LUT_dm(
+  input        [ 2:0] Addr,            //Immediate to determine entry
+  output logic [ 9:0] Target           //DataMem Address we want 
 );
 
 always_comb begin
 
   case(Addr)
-    // TODO: figure out the DataMem addresses we need!
-    2'b00: Target = 8'b0;
-    2'b01: Target = 8'b0;
-    2'b10: Target = 8'b0;
-    2'b11: Target = 8'b0;
+    // These are the DataMem addresses we want to store the most
+    // used temporary variables
+    3'b000: Target = 10'd64;
+    3'b001: Target = 10'd65;
+    3'b010: Target = 10'd66;
+    3'b011: Target = 10'd67;
+    3'b100: Target = 10'd68;
+    3'b101: Target = 10'd69;
+    3'b110: Target = 10'd70;
+    3'b111: Target = 10'd71;
   endcase
 end
 
