@@ -59,6 +59,17 @@ immediate_4_bit = {
     '#15': '1111'
 }
 
+immediate_3_bit = {
+    '#0': '000',
+    '#1': '001',
+    '#2': '010',
+    '#3': '011',
+    '#4': '100',
+    '#5': '101',
+    '#6': '110',
+    '#7': '111'
+}
+
 lw = '0000'
 lwl = '0001'
 sw = '0010'
@@ -84,7 +95,7 @@ with (
         inst = line.split()
         writeline = ''
 
-        # switch to handle each instruction
+        # OPCODES
         if inst[0] == 'lw':
             writeline += lw
         elif inst[0] == 'lwl':
@@ -116,6 +127,7 @@ with (
         elif inst[0] == 'msk':
             writeline += msk
 
+        # Handle first immediate / register
         if (inst[0] == 'sne') or (inst[0] == 'seq'):
             writeline += immediate_5_bit[inst[1]]
         elif (inst[0] == 'boo') or (inst[0] == 'bol'):
@@ -123,7 +135,16 @@ with (
         else:
             writeline += registers_two_bit[inst[1]]
 
-        writeline += op_add
+        # Handle second immediate / register
+        if (inst[0] == 'lw') or (inst[0] == 'sw') or (inst[0] == 'xor') or (inst[0] == 'mov') or (inst[0] == 'lut'):
+            writeline += registers_two_bit[inst[2]]
+        if (inst[0] == 'lwl') or (inst[0] == 'swl') or (inst[0] == 'add') or (inst[0] == 'lsr') or (inst[0] == 'lsl') or (inst[0] == 'msk'):
+            writeline += immediate_3_bit[inst[2]]
+
+        # Handle modify bit - how do we know what bit it's supposed to be, though?
+        if (inst[0] == 'lw') or (inst[0] == 'sw') or (inst[0] == 'xor') or (inst[0] == 'mov') or (inst[0] == 'boo') or (inst[0] == 'bol'):
+            writeline += '0'
+
         writeline += '\n'
         b.write(writeline)
         line = a.readline()
