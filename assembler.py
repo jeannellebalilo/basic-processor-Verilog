@@ -1,8 +1,12 @@
 registers_two_bit = {
     "r0": "00",
+    "r0,": "00",
     "r1": "01",
+    "r1,": "01",
     "r2": "10",
-    "r3": "11"
+    "r2,": "10",
+    "r3": "11",
+    "r3,": "11"
 }
 
 immediate_5_bit = {
@@ -88,63 +92,134 @@ msk = '1110'
 
 with (
     open("assembly.txt", "r") as a,
-    open("machine.txt", "w") as b
+    open("machinecode.txt", "w") as b
 ):
     line = a.readline()
     while(line):
         inst = line.split()
         writeline = ''
 
+        # ignore blank lines
+        if not inst:
+            line = a.readline()
+            continue
+
+        # Flags:
+        # i - help us ignore comments
+        # i5 - instructions that need 5 bit immediates
+        # i4 - instructions that need 4 bit immediates
+        # i3 - instructions that need 3 bit immediates
+        # reg1 - inst[1] is a register
+        # reg2 - inst[2] is a register
+        # mod - need to add modify bit
+        i = 0
+        i5 = 0
+        i4 = 0
+        i3 = 0
+        reg1 = 0
+        reg2 = 0
+        mod = 0
+
         # OPCODES
         if inst[0] == 'lw':
             writeline += lw
+            i = 1
+            reg1 = 1
+            reg2 = 1
+            mod = 1
         elif inst[0] == 'lwl':
             writeline += lwl
+            i = 1
+            reg1 = 1
+            i3 = 1
         elif inst[0] == 'sw':
             writeline += sw
+            i = 1
+            reg1 = 1
+            reg2 = 1
+            mod = 1
         elif inst[0] == 'swl':
             writeline += swl
+            i = 1
+            reg1 = 1
+            i3 = 1
         elif inst[0] == 'xor':
             writeline += xor
+            i = 1
+            reg1 = 1
+            reg2 = 1
+            mod = 1
         elif inst[0] == 'add':
             writeline += add
+            i = 1
+            reg1 = 1
+            i3 = 1
         elif inst[0] == 'lsr':
             writeline += lsr
+            inst = 1
+            reg1 = 1
+            i3 = 1
         elif inst[0] == 'lsl':
             writeline += lsl
+            i = 1
+            reg1 = 1
+            i3 = 1
         elif inst[0] == 'mov':
             writeline += mov
+            i = 1
+            reg1 = 1
+            reg2 = 1
+            mod = 1
         elif inst[0] == 'sne':
             writeline += sne
+            i = 1
+            i5 = 1
         elif inst[0] == 'seq':
             writeline += seq
+            i = 1
+            i5 = 1
         elif inst[0] == 'boo':
             writeline += boo
+            i = 1
+            i4 = 1
+            mod = 1
         elif inst[0] == 'lut':
             writeline += lut
+            i = 1
+            reg1 = 1
+            reg2 = 1
+            mod = 1
         elif inst[0] == 'bol':
             writeline += bol
+            i = 1
+            i4 = 1
+            mod = 1
         elif inst[0] == 'msk':
             writeline += msk
+            i = 1
+            reg1 = 1
+            i3 = 1
 
         # Handle first immediate / register
-        if (inst[0] == 'sne') or (inst[0] == 'seq'):
+        if i5:
             writeline += immediate_5_bit[inst[1]]
-        elif (inst[0] == 'boo') or (inst[0] == 'bol'):
+        elif i4:
             writeline += immediate_4_bit[inst[1]]
-        else:
+        elif reg1:
             writeline += registers_two_bit[inst[1]]
 
+
         # Handle second immediate / register
-        if (inst[0] == 'lw') or (inst[0] == 'sw') or (inst[0] == 'xor') or (inst[0] == 'mov') or (inst[0] == 'lut'):
+        if reg2:
             writeline += registers_two_bit[inst[2]]
-        if (inst[0] == 'lwl') or (inst[0] == 'swl') or (inst[0] == 'add') or (inst[0] == 'lsr') or (inst[0] == 'lsl') or (inst[0] == 'msk'):
+        elif i3:
             writeline += immediate_3_bit[inst[2]]
 
         # Handle modify bit - how do we know what bit it's supposed to be, though?
-        if (inst[0] == 'lw') or (inst[0] == 'sw') or (inst[0] == 'xor') or (inst[0] == 'mov') or (inst[0] == 'boo') or (inst[0] == 'bol'):
+        if mod:
             writeline += '0'
 
-        writeline += '\n'
-        b.write(writeline)
+        if (i == 1):
+            writeline += '\n'
+            b.write(writeline)
         line = a.readline()

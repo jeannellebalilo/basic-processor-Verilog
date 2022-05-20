@@ -1,0 +1,10 @@
+lw r1, r2
+# comment to check if this will be ignored
+# new line below to see if it will also be ignored
+
+sw r1 r2
+add r1, #3
+# commas are optional, so if you mistakenly forget
+# a comma, the program will still work
+# feel free to add more instructions below to check
+sne #15
