@@ -1,10 +1,29 @@
+lsr r3, #4
+lsr r3, #4
+swl r3, #0			#0 will hold current LSW memory address (0)
+add r3, #1
+swl r3, #1			#1 will hold current MSW memory address (1)
+lsl r3, #1
+add r3, #1
+lsl r3, #1
+add r3, #1
+lsl r3, #1
+add r3, #1
+lsl r3, #1
+swl r3, #2			#2 will hold current LSW output address (30)
+add r3, #1
+swl r3, #3			#3 will hold current MSW output address (31)
+
+
+
+
 lw r1, r2
 # comment to check if this will be ignored
 # new line below to see if it will also be ignored
 
 sw r1 r2
-add r1, #3
+add r1, #3  # same line comment
 # commas are optional, so if you mistakenly forget
 # a comma, the program will still work
 # feel free to add more instructions below to check
-sne #15
+sne #15     # same line comment

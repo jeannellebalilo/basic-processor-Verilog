@@ -156,7 +156,7 @@ with (
             i3 = 1
         elif inst[0] == 'lsr':
             writeline += lsr
-            inst = 1
+            i = 1
             reg1 = 1
             i3 = 1
         elif inst[0] == 'lsl':
