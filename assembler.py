@@ -181,8 +181,7 @@ with (
         elif inst[0] == 'boo':
             writeline += boo
             i = 1
-            i4 = 1
-            mod = 1
+            i5 = 1
         elif inst[0] == 'lut':
             writeline += lut
             i = 1
@@ -192,8 +191,7 @@ with (
         elif inst[0] == 'bol':
             writeline += bol
             i = 1
-            i4 = 1
-            mod = 1
+            i5 = 1
         elif inst[0] == 'msk':
             writeline += msk
             i = 1

@@ -8,7 +8,7 @@
 
 module LUT_pc(
   input        [ 3:0] Addr,            //Immediate to determine entry
-  output logic [ 9:0] Target           //DataMem Address we want 
+  output logic [ 9:0] Target           //InstMem Address we want 
 );
 
 always_comb begin
