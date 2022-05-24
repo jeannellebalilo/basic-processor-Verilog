@@ -132,12 +132,21 @@ ProgCtr PC1 (
 );
 
 // this is one way to 'expand' the range of jumps available
-LUT LUT1(
+LUT LUT_pc(
   .Addr         (Ctrl1_TargSel_out),
   .Target       (LUT1_Target_out)
 );
 
+LUT LUT_dm(
+  .Addr         (Ctrl1_TargSel_out),
+  .Target       (LUTdm_Target_out)
+);
 
+LUT LUT_2x_dm(
+  .EntryReg     (),
+  .MuxReg       (),
+  .Target       (LUTdm2_Target_out)
+);
 // Note that it may be simpler to handle Start here; depends on your design!
 logic should_run_processor;
 logic ever_start;
@@ -175,7 +184,7 @@ Ctrl Ctrl1 (
 
 // Register file
 // A(2) makes this 2**2=4 elements deep
-RegFile #(.W(8),.A(3)) RF1 (
+RegFile #(.W(8),.A(2)) RF1 (
   .Clk       (Clk),
   .Reset     (Reset),
   .WriteEn   (Ctrl1_RegWrEn_out),
@@ -214,14 +223,15 @@ assign InA = RF1_DataOutA_out;     // connect RF out to ALU in
 assign InB = RF1_DataOutB_out;     // interject switch/mux if needed/desired
 
 ALU ALU1 (
-  .InputA  (InA),
-  .InputB  (InB),
-  .SC_in   (1'b1),
-  .OP      (Active_InstOut[8:6]),
-  .Out     (ALU1_Out_out),
-  .Zero    (ALU1_Zero_out),
-  .Parity  (ALU1_Parity_out),
-  .Odd     (ALU1_Odd_out)
+  .InputA     (InA),
+  .InputB     (InB),
+  .Immediate  (Active_InstOut[2:0]),
+  .SC_in      (1'b1),
+  .OP         (Active_InstOut[8:5]),
+  .Out        (ALU1_Out_out),
+  .Zero       (ALU1_Zero_out),
+  .Parity     (ALU1_Parity_out),
+  .Odd        (ALU1_Odd_out)
 );
 
 
@@ -239,7 +249,8 @@ DataMem DM1(
 // data_mem; otherwise usually low
 // assign ExMem_RegValue_out = Ctrl1_LoadInst_out ? DM1_DataOut_out : ALU1_Out_out;
 //////////////////////////////////////////////////////////// Execute + Memory //
-
+assign ExMem_RegValue_out = Ctrl1_ALUEn_out ? ALU1_Out_out : DM1_DataOut_out
+// I actually assigned it to be ALU if ALUEn is high, and DM if ALUEn is low.
 
 ////////////////////////////////////////////////////////////////////////////////
 // Extras

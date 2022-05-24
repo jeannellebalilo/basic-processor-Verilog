@@ -10,6 +10,7 @@ import Definitions::*;
 module ALU #(parameter W=8, Ops=4)(
   input        [W-1:0]   InputA,       // data inputs
                          InputB,
+  input        [4:0]     Immediate,    // 5-bit immediate
   input        [Ops-1:0] OP,           // ALU opcode, part of microcode
   input                  SC_in,        // shift or carry in
   output logic [W-1:0]   Out,          // data output
@@ -23,15 +24,15 @@ module ALU #(parameter W=8, Ops=4)(
 op_mne op_mnemonic;
 assign difference = InputA - InputB;
 assign mask = 8'b1;
-assign loop = InputB;
+assign loop = Immediate[2:0];   // 3-bit immediate
 always_comb begin
   // No Op = default
   Out = 0;
 
   case(OP)
-    ADD : Out = InputA + InputB;        // add
+    ADD : Out = InputA + loop;        // add with 3-bit immediate
 
-    // lsl will loop, inserting 0's on the right for InputB (immediate) amount of times
+    // lsl will loop, inserting 0's on the right for '3-bit immediate' amount of times
     LSL : begin
       Out = InputA;
       repeat (loop) begin
@@ -39,15 +40,16 @@ always_comb begin
       end
     end
 
-    // lsr will loop, inserting 0's on the left for InputB (immediate) amount of times
+    // lsr will loop, inserting 0's on the left for '3-bit immediate' amount of times
     LSR : begin
       Out = InputA;
-      repeat (InputB) begin
+      repeat (loop) begin
         Out = {1'b0, Out[7:1]};
       end
     end
     XOR : Out = InputA ^ InputB;        // bitwise exclusive OR
 
+    // TODO: fix SNE and SEQ
     SNE : begin
       if (difference != 0) begin
         Out = 1'b1;
