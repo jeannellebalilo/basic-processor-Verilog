@@ -17,6 +17,7 @@ module Ctrl (
                      RegWrEn,  // write to reg_file (common)
                      MemWrEn,  // write to mem (store only)
                      ALUEn,    // using ALU
+                     LUTdm,
                      Ack      // "done with program"
 );
 
@@ -49,10 +50,17 @@ always_comb begin
   RegWrEn = 0;
   MemWrEn = 0;
   ALUEn = 0;
+  LUTdm = 0;
   case (Opcode)
     0000: RegWrEn = 1;
-    0001: RegWrEn = 1;
-    0010: MemWrEn = 1;
+    0001: begin
+      RegWrEn = 1;
+      LUTdm = 1;
+    end
+    0010: begin
+      MemWrEn = 1;
+      LUTdm = 1;
+    end
     0011: MemWrEn = 1;
     0100: begin
       ALUEn = 1;
@@ -91,6 +99,7 @@ always_comb begin
       BranchEn = 0;
       ALUEn = 0;
       MemWrEn = 0;
+      LUTdm = 0;
     end
   endcase
 end

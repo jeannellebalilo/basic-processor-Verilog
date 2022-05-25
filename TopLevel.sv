@@ -138,13 +138,13 @@ LUT LUT_pc(
 );
 
 LUT LUT_dm(
-  .Addr         (Ctrl1_TargSel_out),
+  .Addr         (Active_InstOut[2:0]),
   .Target       (LUTdm_Target_out)
 );
 
 LUT LUT_2x_dm(
-  .EntryReg     (),
-  .MuxReg       (),
+  .EntryReg     (Active_InstOut[4:3]),
+  .MuxReg       (Active_InstOut[2:1]),
   .Target       (LUTdm2_Target_out)
 );
 // Note that it may be simpler to handle Start here; depends on your design!
@@ -177,9 +177,10 @@ Ctrl Ctrl1 (
   .RegWrEn      (Ctrl1_RegWrEn_out),  // register file write enable
   .MemWrEn      (Ctrl1_MemWrEn_out),  // data memory write enable
   .ALUEn        (Ctrl1_ALUEn_out),
+  .LUTdm        (Ctrl1_LUTdm_out),
   //.LoadInst     (Ctrl1_LoadInst_out), // selects memory vs ALU output as data input to reg_file
-  .Ack          (Ctrl1_Ack_out),      // "done" flag
-  .TargSel      (Ctrl1_TargSel_out)   // index into lookup table
+  .Ack          (Ctrl1_Ack_out)      // "done" flag
+  //.TargSel      (Ctrl1_TargSel_out)   // index into lookup table
 );
 
 // Register file
@@ -221,6 +222,7 @@ logic [ 7:0] InA, InB;      // ALU operand inputs
 // No decision logic for these in this implementation
 assign InA = RF1_DataOutA_out;     // connect RF out to ALU in
 assign InB = RF1_DataOutB_out;     // interject switch/mux if needed/desired
+assign dmSrc = Ctrl1_LUTdm_out ? Active_InstOut[2:0] : RF1_DataOutB_out;
 
 ALU ALU1 (
   .InputA     (InA),
@@ -236,7 +238,7 @@ ALU ALU1 (
 
 
 DataMem DM1(
-  .DataAddress  (RF1_DataOutB_out),
+  .DataAddress  (dmSrc),
   .WriteEn      (Ctrl1_MemWrEn_out),
   .DataIn       (RF1_DataOutA_out),
   .DataOut      (DM1_DataOut_out),
@@ -249,7 +251,7 @@ DataMem DM1(
 // data_mem; otherwise usually low
 // assign ExMem_RegValue_out = Ctrl1_LoadInst_out ? DM1_DataOut_out : ALU1_Out_out;
 //////////////////////////////////////////////////////////// Execute + Memory //
-assign ExMem_RegValue_out = Ctrl1_ALUEn_out ? ALU1_Out_out : DM1_DataOut_out
+assign ExMem_RegValue_out = Ctrl1_ALUEn_out ? ALU1_Out_out : DM1_DataOut_out;
 // I actually assigned it to be ALU if ALUEn is high, and DM if ALUEn is low.
 
 ////////////////////////////////////////////////////////////////////////////////
