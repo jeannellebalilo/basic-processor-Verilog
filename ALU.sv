@@ -22,7 +22,7 @@ module ALU #(parameter W=8, Ops=4)(
 
 // type enum: used for convenient waveform viewing
 op_mne op_mnemonic;
-assign difference = InputA - InputB;
+assign difference = InputA - Immediate;
 assign mask = 8'b1;
 assign loop = Immediate[2:0];   // 3-bit immediate
 always_comb begin
@@ -49,7 +49,6 @@ always_comb begin
     end
     XOR : Out = InputA ^ InputB;        // bitwise exclusive OR
 
-    // TODO: fix SNE and SEQ
     SNE : begin
       if (difference != 0) begin
         Out = 1'b1;

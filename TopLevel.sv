@@ -172,12 +172,13 @@ end
 // Control decoder
 Ctrl Ctrl1 (
   .Instruction  (Active_InstOut),     // from instr_ROM
-  //.Jump         (Ctrl1_Jump_out),     // to PC to handle jump/branch instructions
+  .Jump         (Ctrl1_Jump_out),     // to PC to handle jump/branch instructions
   .BranchEn     (Ctrl1_BranchEn_out), // to PC
   .RegWrEn      (Ctrl1_RegWrEn_out),  // register file write enable
   .MemWrEn      (Ctrl1_MemWrEn_out),  // data memory write enable
   .ALUEn        (Ctrl1_ALUEn_out),
   .LUTdm        (Ctrl1_LUTdm_out),
+  .SetInst      (Ctrl_Set_out),
   //.LoadInst     (Ctrl1_LoadInst_out), // selects memory vs ALU output as data input to reg_file
   .Ack          (Ctrl1_Ack_out)      // "done" flag
   //.TargSel      (Ctrl1_TargSel_out)   // index into lookup table
@@ -189,12 +190,15 @@ RegFile #(.W(8),.A(2)) RF1 (
   .Clk       (Clk),
   .Reset     (Reset),
   .WriteEn   (Ctrl1_RegWrEn_out),
+  .Jump      (Ctrl1_Jump_out),
+  .SetInst   (Ctrl_Set_out),
   .RaddrA    (Active_InstOut[4:3]),      // See example below on how 3 opcode bits
   .RaddrB    (Active_InstOut[2:1]),      // could address 16 registers...
   .Waddr     (Active_InstOut[4:3]),      // mux above
   .DataIn    (ExMem_RegValue_out),
   .DataOutA  (RF1_DataOutA_out),
-  .DataOutB  (RF1_DataOutB_out)
+  .DataOutB  (RF1_DataOutB_out),
+  .JumpReg   (RF_JumpReg_Out)
 );
 // Here's a neat trick:
 //   one pointer, two adjacent read accesses:

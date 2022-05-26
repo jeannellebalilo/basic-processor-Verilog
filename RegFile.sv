@@ -13,12 +13,15 @@ module RegFile #(parameter W=8, A=2)(
   input                Clk,
   input                Reset,
   input                WriteEn,
+  input                Jump,
+  input                SetInst,
   input        [A-1:0] RaddrA,    // address pointers
   input        [A-1:0] RaddrB,    // address pointers
   input        [A-1:0] Waddr,     // address pointers
   input        [W-1:0] DataIn,    // data for registers
   output       [W-1:0] DataOutA,  //   showing two different ways to handle
-  output logic [W-1:0] DataOutB   //   DataOutX, for pedagogic reasons only
+  output logic [W-1:0] DataOutB,   //   DataOutX, for pedagogic reasons only
+  output       [W-1:0] JumpReg
 );
 
 
@@ -27,13 +30,14 @@ module RegFile #(parameter W=8, A=2)(
 //   When W=8 bit wide registers and A=4 to address 16 registers
 //   then this could be written `logic [7:0] registers[16]`
 logic [W-1:0] Registers[2**A];
-
+logic [W-1:0] JumpRegister;
 
 // combinational reads
 //
 // This is ARM-style registers (i.e. r0 is general purpose)
-assign      DataOutA = Registers[RaddrA];
+assign      DataOutA = SetInst ?  Registers[0] : Registers[RaddrA];
 assign      DataOutB = Registers[RaddrB];
+assign      JumpReg = JumpRegister;
 
 // sequential (clocked) writes
 //
@@ -46,6 +50,8 @@ always_ff @ (posedge Clk) begin
     end
   end else if (WriteEn) begin
     Registers[Waddr] <= DataIn;
+  end else if (WriteEn & Jump) begin
+    JumpRegister <= DataIn;
   end
 end
 
