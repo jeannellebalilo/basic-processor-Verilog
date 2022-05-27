@@ -57,6 +57,7 @@ always_comb begin
         Out = 1'b0;
       end
     end
+    MOV : Out = InputB;
     SEQ : begin
       if (difference == 0) begin
         Out = 1'b1;

@@ -82,7 +82,10 @@ always_comb begin
       ALUEn = 1;
       RegWrEn = 1;
     end
-    1000: RegWrEn = 1;
+    1000: begin
+      RegWrEn = 1;
+      ALUEn = 1;
+    end
     1001: begin
       ALUEn = 1;
       RegWrEn = 1;
