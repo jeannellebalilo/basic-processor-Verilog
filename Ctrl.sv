@@ -14,6 +14,7 @@ module Ctrl (
   input  [8:0] Instruction,    // machine code
                                // some designs use ALU inputs here
   output logic       BranchEn, // branch at all?
+                     BOLEn,
                      RegWrEn,  // write to reg_file (common)
                      MemWrEn,  // write to mem (store only)
                      ALUEn,    // using ALU
@@ -49,6 +50,7 @@ assign Ack = &Instruction;
 // equiv to simply: assign Jump = Instruction[2:0] == RSH;
 always_comb begin
   BranchEn = 0;
+  BOLEn = 0;
   RegWrEn = 0;
   MemWrEn = 0;
   ALUEn = 0;
@@ -100,7 +102,10 @@ always_comb begin
     end
     1011: BranchEn = 1;
     // 1100: 
-    1101: BranchEn = 1;
+    1101: begin
+      BranchEn = 1;
+      BOLEn = 1;
+    end
     1110:begin
       ALUEn = 1;
       RegWrEn = 1;

@@ -124,16 +124,17 @@ ProgCtr PC1 (
   .Reset       (Reset),              // reset to 0
   .Start       (Start),              // Your PC will have to do something smart with this
   .Clk         (Clk),                // System CLK
-  .BranchAbsEn (Ctrl1_Jump_out),     // jump enable
-  .BranchRelEn (Ctrl1_BranchEn_out), // branch enable
-  .ALU_flag    (ALU1_Zero_out),      // Maybe your PC will find this useful
+  .Branch      (Ctrl1_BranchEn_out),
+  .Bol         (Ctrl_BOL_out),
+  .SET_flag    (RF_JumpReg_Out),      // Maybe your PC will find this useful
   .Target      (LUT1_Target_out),    // "where to?" or "how far?" during a jump or branch
   .ProgCtr     (PC1_ProgCtr_out)     // program count = index to instruction memory
 );
 
+assign TargSrc = Ctrl_BOL_out ? LUT1_Target_out : Active_InstOut[4:0];
 // this is one way to 'expand' the range of jumps available
 LUT LUT_pc(
-  .Addr         (Ctrl1_TargSel_out),
+  .Addr         (Active_InstOut[4:1]),
   .Target       (LUT1_Target_out)
 );
 
@@ -174,14 +175,13 @@ Ctrl Ctrl1 (
   .Instruction  (Active_InstOut),     // from instr_ROM
   .Jump         (Ctrl1_Jump_out),     // to PC to handle jump/branch instructions
   .BranchEn     (Ctrl1_BranchEn_out), // to PC
+  .BOLEn        (Ctrl_BOL_out),
   .RegWrEn      (Ctrl1_RegWrEn_out),  // register file write enable
   .MemWrEn      (Ctrl1_MemWrEn_out),  // data memory write enable
   .ALUEn        (Ctrl1_ALUEn_out),
   .LUTdm        (Ctrl1_LUTdm_out),
   .SetInst      (Ctrl_Set_out),
-  //.LoadInst     (Ctrl1_LoadInst_out), // selects memory vs ALU output as data input to reg_file
   .Ack          (Ctrl1_Ack_out)      // "done" flag
-  //.TargSel      (Ctrl1_TargSel_out)   // index into lookup table
 );
 
 // Register file

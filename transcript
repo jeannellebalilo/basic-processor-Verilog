@@ -21,3 +21,17 @@
 # Compile of Ctrl.sv was successful.
 # Compile of TopLevel.sv was successful.
 # 3 compiles, 0 failed with no errors.
+# Compile of ProgCtr.sv was successful.
+# Compile of RegFile.sv was successful.
+# Compile of TopLevel.sv was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of Ctrl.sv failed with 1 errors.
+# Compile of ProgCtr.sv failed with 3 errors.
+# Compile of TopLevel.sv was successful.
+# 3 compiles, 2 failed with 4 errors.
+# Compile of Ctrl.sv failed with 1 errors.
+# Compile of ProgCtr.sv was successful.
+# Compile of TopLevel.sv was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of Ctrl.sv was successful.
+# Compile of ProgCtr.sv was successful.
