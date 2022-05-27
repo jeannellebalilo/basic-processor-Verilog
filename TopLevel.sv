@@ -180,6 +180,7 @@ Ctrl Ctrl1 (
   .MemWrEn      (Ctrl1_MemWrEn_out),  // data memory write enable
   .ALUEn        (Ctrl1_ALUEn_out),
   .LUTdm        (Ctrl1_LUTdm_out),
+  .LUT2x        (Ctrl_LUT2x_out),
   .SetInst      (Ctrl_Set_out),
   .Ack          (Ctrl1_Ack_out)      // "done" flag
 );
@@ -192,10 +193,12 @@ RegFile #(.W(8),.A(2)) RF1 (
   .WriteEn   (Ctrl1_RegWrEn_out),
   .Jump      (Ctrl1_Jump_out),
   .SetInst   (Ctrl_Set_out),
+  .LUT2x     (Ctrl_LUT2x_out),
   .RaddrA    (Active_InstOut[4:3]),      // See example below on how 3 opcode bits
   .RaddrB    (Active_InstOut[2:1]),      // could address 16 registers...
   .Waddr     (Active_InstOut[4:3]),      // mux above
   .DataIn    (ExMem_RegValue_out),
+  .LUTdata   (LUTdm2_Target_out),
   .DataOutA  (RF1_DataOutA_out),
   .DataOutB  (RF1_DataOutB_out),
   .JumpReg   (RF_JumpReg_Out)

@@ -15,10 +15,12 @@ module RegFile #(parameter W=8, A=2)(
   input                WriteEn,
   input                Jump,
   input                SetInst,
+  input                LUT2x,
   input        [A-1:0] RaddrA,    // address pointers
   input        [A-1:0] RaddrB,    // address pointers
   input        [A-1:0] Waddr,     // address pointers
   input        [W-1:0] DataIn,    // data for registers
+  input        [W-1:0] LUTdata,
   output       [W-1:0] DataOutA,  //   showing two different ways to handle
   output logic [W-1:0] DataOutB,   //   DataOutX, for pedagogic reasons only
   output       [W-1:0] JumpReg
@@ -50,6 +52,8 @@ always_ff @ (posedge Clk) begin
     end
   end else if (WriteEn) begin
     Registers[Waddr] <= DataIn;
+  end else if (LUT2x) begin
+    Registers[Waddr] <= LUTdata;
   end else if (WriteEn & Jump) begin
     JumpRegister <= DataIn;
   end
