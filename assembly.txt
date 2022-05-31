@@ -1,29 +1,329 @@
 lsr r3, #4
 lsr r3, #4
-swl r3, #0			#0 will hold current LSW memory address (0)
+swl r3, #0			#0 will hold current byte address
 add r3, #1
-swl r3, #1			#1 will hold current MSW memory address (1)
-lsl r3, #1
+swl r3, #1			#1 will hold next byte address
+lsl r3, #5			# r3 = 32, the address of the pattern
+lw  r1, r3			# r1 = XXXX X000 - the pattern
+lsr r1, #3			# r1 = 000X XXXX - shifted pattern
+swl r1, #7			#7 will hold shifted pattern 
+add r3, #1			# r3 = 33, address output of bounded count
+swl r3, #6			#6 will hold beginning address of outputs
+lsr r1, #4
+lsr r1, #4
+sw  r1, r3			# Bounded count = 0
+add r3, #1			# r3 = 34, address output of byte count
+sw  r1, r3			# Byte count = 0
+add r3, #1			# r3 = 35, address output of unbounded count
+sw  r1, r3			# Unbounded count = 0
+swl r1, #5			#5 will hold the inThisByte boolean 
+
+#3 JUMP SHOULD LAND ON NEXT LINE
+lsr r0, #4		 	
+lsr r0, #4			# Sets r0 to 0
+seq #1			# Sets Jump register to 0
+
+# FIrST POSSIBLE PATTERN MATCH
+lwl r3, #0			# r3 = current byte address 
+lw  r1, r3			# r1 = 7654 3210 = current byte
+lwl r3, #7
+lw  r0, r3			# r0 = 000X XXXX
+lsr r1, #3			# r3 = 0007 6543
+xor r0, r1			# r0 = 000Y YYYY if all zeros, match found
+sne #0			# if r0 != 0, set Jr = 1
+boo #18			# if Jr == 1, skip next part
+
+#increment bounded count - 4 lines
+lwl r3, #6
+lw  r1, r3			# r1 = bounded count
+add r1, #1			# BoundedCount++
+sw  r1, r3
+#check inThisByte - 3 lines
+lwl r0, #5			# r0 hold inThisByte boolean
+sne #0 			# if r0 != 0, set Jr = 1
+boo #6			# if Jr == 1, skip next part
+#increment byte count and set boolean - 6 lines
+add r0, #1
+swl r0, #5			# Set inThisByte boolean to 1
 add r3, #1
-lsl r3, #1
+lw  r1, r3			# r1 = Byte count
+add r1, #1			# ByteCount++
+sw  r1, r3
+#increment unbounded count - 5 lines
+lwl r3, #6
+add r3, #2
+lw  r1, r3			# r1 = unbounded count
+add r1, #1			# UnboundedCount++
+sw  r1, r3
+
+#SKIP TO HERE IF NO MATCH
+lsr r0, #4	 	
+lsr r0, #4			# Sets r0 to 0
+seq #1			# Sets Jump register to 0
+
+# SECOND POSSIBLE PATTERN MATCH
+lwl r3, #0			# r3 = current byte address 
+lw  r1, r3			# r1 = 7654 3210 = current byte
+lwl r3, #7
+lw  r0, r3			# r0 = 000X XXXX
+lsl r1, #1			# r1 = 6543 210-
+lsr r1, #3			# r3 = 0006 5432
+xor r0, r1			# r0 = 000Y YYYY if all zeros, match found
+sne #0			# if r0 != 0, set Jr = 1
+boo #18			# if Jr == 1, skip next part
+
+
+#increment bounded count - 4 lines
+lwl r3, #6
+lw  r1, r3			# r1 = bounded count
+add r1, #1			# BoundedCount++
+sw  r1, r3
+#check inThisByte - 3 lines
+lwl r0, #5			# r0 hold inThisByte boolean
+sne #0 			# if r0 != 0, set Jr = 1
+boo #6			# if Jr == 1, skip next part
+#increment byte count and set boolean - 6 lines
+add r0, #1
+swl r0, #5			# Set inThisByte boolean to 1
 add r3, #1
-lsl r3, #1
+lw  r1, r3			# r1 = Byte count
+add r1, #1			# ByteCount++
+sw  r1, r3
+#increment unbounded count - 5 lines
+lwl r3, #6
+add r3, #2
+lw  r1, r3			# r1 = unbounded count
+add r1, #1			# UnboundedCount++
+sw  r1, r3
+
+#SKIP TO HERE IF NO MATCH
+lsr r0, #4	 	
+lsr r0, #4			# Sets r0 to 0
+seq #1			# Sets Jump register to 0
+
+# THIRD POSSIBLE PATTErN MATCH
+lwl r3, #0			# r3 = current byte address 
+lw  r1, r3			# r1 = 7654 3210 = current byte
+lwl r3, #7
+lw  r0, r3			# r0 = 000X XXXX
+lsl r1, #2			# r1 = 5432 10--
+lsr r1, #3			# r3 = 0005 4321
+xor r0, r1			# r0 = 000Y YYYY if all zeros, match found
+sne #0			# if r0 != 0, set Jr = 1
+boo #18			# if Jr == 1, skip next part
+
+
+#increment bounded count - 4 lines
+lwl r3, #6
+lw  r1, r3			# r1 = bounded count
+add r1, #1			# BoundedCount++
+sw  r1, r3
+#check inThisByte - 3 lines
+lwl r0, #5			# r0 hold inThisByte boolean
+sne #0 			# if r0 != 0, set Jr = 1
+boo #6			# if Jr == 1, skip next part
+#increment byte count and set boolean - 6 lines
+add r0, #1
+swl r0, #5			# Set inThisByte boolean to 1
 add r3, #1
-lsl r3, #1
-swl r3, #2			#2 will hold current LSW output address (30)
+lw  r1, r3			# r1 = Byte count
+add r1, #1			# ByteCount++
+sw  r1, r3
+#increment unbounded count - 5 lines
+lwl r3, #6
+add r3, #2
+lw  r1, r3			# r1 = unbounded count
+add r1, #1			# UnboundedCount++
+sw  r1, r3
+
+#SKIP TO HERE IF NO MATCH
+lsr r0, #4	 	
+lsr r0, #4			# Sets r0 to 0
+seq #1			# Sets Jump register to 0
+
+
+# FOURTH POSSIBLE PATTERN MATCH - LAST OF BOUNDED
+lwl r3, #0			# r3 = current byte address 
+lw  r1, r3			# r1 = 7654 3210 = current byte
+lwl r3, #7
+lw  r0, r3			# r0 = 000X XXXX
+lsl r1, #3			# r1 = 4321 0---
+lsr r1, #3			# r3 = 0004 3210
+xor r0, r1			# r0 = 000Y YYYY if all zeros, match found
+sne #0			# if r0 != 0, set Jr = 1
+boo #18			# if Jr == 1, skip next part
+
+
+#increment bounded count - 4 lines
+lwl r3, #6
+lw  r1, r3			# r1 = bounded count
+add r1, #1			# BoundedCount++
+sw  r1, r3
+#check inThisByte - 3 lines
+lwl r0, #5			# r0 hold inThisByte boolean
+sne #0 			# if r0 != 0, set Jr = 1
+boo #6			# if Jr == 1, skip next part
+#increment byte count and set boolean - 6 lines
+add r0, #1
+swl r0, #5			# Set inThisByte boolean to 1
 add r3, #1
-swl r3, #3			#3 will hold current MSW output address (31)
+lw  r1, r3			# r1 = Byte count
+add r1, #1			# ByteCount++
+sw  r1, r3
+#increment unbounded count - 5 lines
+lwl r3, #6
+add r3, #2
+lw  r1, r3			# r1 = unbounded count
+add r1, #1			# UnboundedCount++
+sw  r1, r3
+
+#SKIP TO HErE IF NO MATCH
+lsr r0, #4	 	
+lsr r0, #4			# Sets r0 to 0
+seq #1			# Sets Jump register to 0
+lwl r1, #5			# r1 holds inThisByte boolean
+msk r1, #7			# Set inThisByte to zero for next iteration
+
+
+# FIFTH POSSIBLE PATTERN MATCH - FIRST OF CROSSING BOUNDS
+
+# IF WE ArE ON THE LAST BYTE, SKIP THE LAST 4 POSSIBLE MATCHES
+lwl r0, #0			# r0 = current byte address 
+seq #31			# Jump reg = 1 if r0 (lwl #0) holds 31
+bol #2			# if Jr = 1, branch to the PC address saved in 
+the LUT_pc entry #2 
+lsr r0, #4	 	
+lsr r0, #4			# Sets r0 to 0
+seq #1			# Sets Jump register to 0
+#continue if not on last (31st) byte
+
+lwl r3, #0			# r3 = current byte address
+lw  r1, r3			# r1 = 7654 3210 = current byte
+add r3, #1			# r0 = next byte address
+lw  r2, r3			# r2 = 7654 3210 = next byte
+lwl r3, #7
+lw  r0, r3			# r0 = 000X XXXX
+lsl r1, #4			# r1 = 3210 ----
+lsr r1, #3			# r3 = 0003 210-
+lsr r2, #7			# r2 = ---- ---7
+xor r1, r2			# r1 = ---3 2107
+xor r0, r1			# r0 = 000Y YYYY if all zeros, match found
+sne #0			# if r0 != 0, set Jr = 1
+boo #5			# if Jr == 1, skip next part
+
+
+#increment unbounded count - 5 lines
+lwl r3, #6
+add r3, #2
+lw  r1, r3			# r1 = unbounded count
+add r1, #1			# UnboundedCount++
+sw  r1, r3
+
+#SKIP TO HERE IF NO MATCH
+lsr r0, #4	 	
+lsr r0, #4			# Sets r0 to 0
+seq #1			# Sets Jump register to 0
+
+
+# SIXTH POSSIBLE PATTERN MATCH - SECOND OF CROSSING BOUNDS
+lwl r3, #0			# r3 = current byte address
+lw  r1, r3			# r1 = 7654 3210 = current byte
+add r3, #1			# r0 = next byte address
+lw  r2, r3			# r2 = 7654 3210 = next byte
+lwl r3, #7
+lw  r0, r3			# r0 = 000X XXXX
+lsl r1, #5			# r1 = 210- ----
+lsr r1, #3			# r3 = 0002 10--
+lsr r2, #6			# r2 = ---- --76
+xor r1, r2			# r1 = ---2 1076
+xor r0, r1			# r0 = 000Y YYYY if all zeros, match found
+sne #0			# if r0 != 0, set Jr = 1
+boo #5			# if Jr == 1, skip next part
+
+
+#increment unbounded count - 5 lines
+lwl r3, #6
+add r3, #2
+lw  r1, r3			# r1 = unbounded count
+add r1, #1			# UnboundedCount++
+sw  r1, r3
+
+#SKIP TO HERE IF NO MATCH
+lsr r0, #4	 	
+lsr r0, #4			# Sets r0 to 0
+seq #1			# Sets Jump register to 0
+
+
+
+# SEVENTH POSSIBLE PATTERN MATCH - THIRD OF CROSSING BOUNDS
+lwl r3, #0			# r3 = current byte address
+lw  r1, r3			# r1 = 7654 3210 = current byte
+add r3, #1			# r0 = next byte address
+lw  r2, r3			# r2 = 7654 3210 = next byte
+lwl r3, #7
+lw  r0, r3			# r0 = 000X XXXX
+lsl r1, #6			# r1 = 10-- ----
+lsr r1, #3			# r3 = 0001 0---
+lsr r2, #5			# r2 = ---- -765
+xor r1, r2			# r1 = ---1 0765
+xor r0, r1			# r0 = 000Y YYYY if all zeros, match found
+sne #0			# if r0 != 0, set Jr = 1
+boo #5			# if Jr == 1, skip next part
+
+
+#increment unbounded count - 5 lines
+lwl r3, #6
+add r3, #2
+lw  r1, r3			# r1 = unbounded count
+add r1, #1			# UnboundedCount++
+sw  r1, r3
+
+#SKIP TO HERE IF NO MATCH
+lsr r0, #4	 	
+lsr r0, #4			# Sets r0 to 0
+seq #1			# Sets Jump register to 0
+
+
+
+# LAST POSSIBLE PATTERN MATCH BEFORE CHANGING CURRENT BYTE PTR
+lwl r3, #0			# r3 = current byte address
+lw  r1, r3			# r1 = 7654 3210 = current byte
+add r3, #1			# r0 = next byte address
+lw  r2, r3			# r2 = 7654 3210 = next byte
+lwl r3, #7
+lw  r0, r3			# r0 = 000X XXXX
+lsl r1, #7			# r1 = 0--- ----
+lsr r1, #3			# r3 = 0000 ----
+lsr r2, #4			# r2 = ---- 7654
+xor r1, r2			# r1 = ---0 7654
+xor r0, r1			# r0 = 000Y YYYY if all zeros, match found
+sne #0			# if r0 != 0, set Jr = 1
+boo #5			# if Jr == 1, skip next part
+
+
+#increment unbounded count - 5 lines
+lwl r3, #6
+add r3, #2
+lw  r1, r3			# r1 = unbounded count
+add r1, #1			# UnboundedCount++
+sw  r1, r3
+
+#SKIP TO HERE IF NO MATCH
+lsr r0, #4	 	
+lsr r0, #4			# Sets r0 to 0
+seq #1			# Sets Jump register to 0
 
 
 
 
-lw r1, r2
-# comment to check if this will be ignored
-# new line below to see if it will also be ignored
+# Lastly set up loop conditions
+lwl r0, #0
+add r0, #1			# Increment current byte address
+swl r0, #0
 
-sw r1 r2
-add r1, #3  # same line comment
-# commas are optional, so if you mistakenly forget
-# a comma, the program will still work
-# feel free to add more instructions below to check
-sne #15     # same line comment
+sne #30			# Jump reg = 1 if r0 (lwl #0) does not hold 30
+bol #3			# if JR = 1, branch to the PC address saved in 
+the LUT_pc entry #3 
+
+#2 JUMP SHOULD LAND ON NEXT LINE
+# raise done flag
