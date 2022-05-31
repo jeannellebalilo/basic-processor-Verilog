@@ -43,7 +43,7 @@ wire [ 9:0] PC1_ProgCtr_out;  // the program counter
 // something more informative probably...
 wire [ 9:0] LUT1_Target_out;  // Target of branch/jump
 wire [ 9:0] LUTdm_Target_out;
-wire [ 9:0] LUTdm2_Target_out;
+wire [ 8:0] LUTdm2_Target_out;
 
 // Control block outputs
 logic       Ctrl1_Jump_out;      // to program counter: jump
@@ -228,17 +228,18 @@ assign Ack = should_run_processor & Ctrl1_Ack_out;
 
 // You can declare local wires if it makes sense, for instance
 // if you need an local mux for the input
-logic [ 7:0] InA, InB;      // ALU operand inputs
+logic [ 7:0] InA, InB, LUTdm, dmSrc;      // ALU operand inputs
 
 // No decision logic for these in this implementation
 assign InA = RF1_DataOutA_out;     // connect RF out to ALU in
 assign InB = RF1_DataOutB_out;     // interject switch/mux if needed/desired
-assign dmSrc = Ctrl1_LUTdm_out ? Active_InstOut[2:0] : RF1_DataOutB_out;
+assign LUTdm = {5'b0, Active_InstOut[2:0]};
+assign dmSrc = Ctrl1_LUTdm_out ? LUTdm : RF1_DataOutB_out;
 
 ALU ALU1 (
   .InputA     (InA),
   .InputB     (InB),
-  .Immediate  (Active_InstOut[2:0]),
+  .Immediate  (Active_InstOut[4:0]),
   .SC_in      (1'b1),
   .OP         (Active_InstOut[8:5]),
   .Out        (ALU1_Out_out),
