@@ -27,7 +27,7 @@ module InstROM #(parameter A=10, W=9) (
 //
 // This is usually the fastest / easiest way to test individual instructions.
 // ---------------- ENABLED APPROACH 1 FOR TESTING PURPOSES  ----------------
-
+/*
 always_comb begin 
   InstOut = 'b000_000_000;       // default
   case (InstAddress)
@@ -55,7 +55,7 @@ always_comb begin
 
     // opcode = 15 halt
     4 : InstOut = '1;  // equiv to 10'b1111111111 or 'b1111111111    halt
-    */
+    
 
     // (default case already covered by opening statement)
 
@@ -65,7 +65,7 @@ always_comb begin
     3 : InstOut = 'b001_001_100;   // sw, r1, r2
     4 : InstOut = '1;
   endcase
-end
+end */
 
 // Approach 2: Create an actual instruction memory, and populate it
 // from an external file.
@@ -77,7 +77,7 @@ end
 // ----------------  COMMENTED OUT APPROACH 2 FOR NOW  ----------------
 
 // Declare 2-dimensional array, W bits wide, 2**A words deep
-/*
+
 logic [W-1:0] inst_rom[2**A];
 
 // This is where memory is read
@@ -89,13 +89,13 @@ initial begin
   // NOTE: This may not work depending on your simulator
   //       e.g. Questa needs the file in path of the application .exe,
   //       it doesn't care where you project code is
-  $readmemb("../inst_mem.hex",inst_rom);
+  $readmemb("./program1.txt",inst_rom);
 
   // So you are probably better off with an absolute path,
   // but you will have to change this example path when you
   // try this on your machine most likely:
   //$readmemb("//vmware-host/Shared Folders/Downloads/basic_proc2/machine_code.txt", inst_rom);
 end
-*/
+
 
 endmodule

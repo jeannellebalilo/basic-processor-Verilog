@@ -41,3 +41,6 @@
 # 3 compiles, 1 failed with 1 error.
 # Compile of RegFile.sv failed with 1 errors.
 # Compile of RegFile.sv was successful.
+# Compile of InstROM.sv was successful.
+# Compile of TopLevel.sv was successful.
+# 2 compiles, 0 failed with no errors.
