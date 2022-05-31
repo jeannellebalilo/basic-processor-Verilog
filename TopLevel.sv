@@ -42,20 +42,25 @@ wire [ 9:0] PC1_ProgCtr_out;  // the program counter
 // of how to do a LUT, but your core should call this
 // something more informative probably...
 wire [ 9:0] LUT1_Target_out;  // Target of branch/jump
+wire [ 9:0] LUTdm_Target_out;
+wire [ 9:0] LUTdm2_Target_out;
 
 // Control block outputs
-//logic       Ctrl1_Jump_out;      // to program counter: jump
+logic       Ctrl1_Jump_out;      // to program counter: jump
 logic       Ctrl1_BranchEn_out;  // to program counter: branch enable
+logic       Ctrl_BOL_out;
 logic       Ctrl1_RegWrEn_out;   // reg_file write enable
 logic       Ctrl1_MemWrEn_out;   // data_memory write enable
 logic       Ctrl1_ALUEn_out;
-//logic       Ctrl1_LoadInst_out;  // TODO: Why both of these?
+logic       Ctrl1_LUTdm_out;
+logic       Ctrl_LUT2x_out;
+logic       Ctrl_Set_out;
 logic       Ctrl1_Ack_out;       // Done with program?
-logic [1:0] Ctrl1_TargSel_out;   // one trick to help with target range
 
 // Register file outputs
 logic [7:0] RF1_DataOutA_out; // Contents of first selected register
 logic [7:0] RF1_DataOutB_out; // Contents of second selected register
+logic [7:0] RF_JumpReg_Out;
 
 // ALU outputs
 logic [7:0] ALU1_Out_out;
@@ -68,7 +73,6 @@ logic [7:0] DM1_DataOut_out;  // data out from data_memory
 
 // Output Mux deciding whether ALU or Memory result is used
 logic [ 7:0] ExMem_RegValue_out; // data in to reg file
-
 
 // Extras
 //
