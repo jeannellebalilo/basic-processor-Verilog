@@ -1,0 +1,171 @@
+lsr R3, #4
+lsr R3, #4
+swl R3, #0
+add R3, #1
+swl R3, #1
+lsl R3, #1
+add R3, #1
+lsl R3, #1
+add R3, #1
+lsl R3, #1
+add R3, #1
+lsl R3, #1
+swl R3, #2
+add R3, #1
+swl R3, #3
+lsr R0, #4          #0 JUMP LANDS HERE
+lsr R0, #4
+seq #1
+lwl R3, #0
+lw  R2, R3
+lwl R3, #1
+lw  R1, R3
+lsl R1, #5
+lsr R2, #4
+lsl R2, #1
+xor R1, R2
+lwl R3, #3
+sw  R1, R3
+lwl R3, #0
+lw  R1, R3
+mov R2, R1
+lsr R1, #1
+lsl R1, #5
+lsl R2, #7
+lsr R2, #4
+xor R1, R2
+lwl R3, #2
+sw  R1, R3
+lwl R3, #1
+lw  R1, R3
+mov R2, R1, #0
+mov R3, R1, #0
+msk R3, #1 
+lsr R3, #1
+lsr R2, #2
+xor R3, R2
+msk R1, #0
+xor R1, R3
+lwl R3, #0
+lw  R2, R3
+mov R3, R2, #0
+lsr R3, #7
+xor R1, R3
+swl R1, #4
+mov R3, R2, #0
+lsl R3, #1
+lsr R3, #7
+xor R1, R3
+mov R3, R2, #0
+lsl R3, #2
+lsr R3, #7
+xor R1, R3
+mov R3, R2, #0		
+lsl R3, #3			
+lsr R3, #7			
+xor R1, R3
+mov R0, R1
+xor R0, R1
+lwl R3, #3
+lw  R2, R3
+xor R1, R2
+sw  R1, R3
+lwl R1, #4
+lwl R3, #0
+lw  R2, R3
+mov R3, R2, #0
+lsl R3, #4
+lsr R3, #7
+xor R1, R3
+mov R3, R2, #0
+lsl R3, #5
+lsr R3, #7
+xor R1, R3
+xor R0, R3
+lsl R2, #6
+lsr R2, #7
+xor R0, R2
+xor R1, R2
+xor R0, R1
+lsl R1, #2
+lwl R3, #1
+lw  R2, R3
+mov R3, R2, #0
+lsr R3, #2
+xor R1, R3
+lsl R2, #6
+lsr R2, #7
+xor R1, R2
+lwl R3, #0
+lw  R2, R3
+mov R3, R2, #0
+msk R3, #0
+xor R1, R3
+xor R0, R3
+mov R3, R2, #0
+lsl R3, #1
+lsr R2, #7
+xor R1, R3
+mov R3, R2, #0
+lsl R3, #2
+lsr R2, #7
+xor R1, R3
+mov R3, R2, #0
+lsl R3, #4
+lsr R2, #7
+xor R1, R3
+lsl R2, #5
+lsr R2, #7
+xor R1, R2
+xor R0, R1
+lsl R1, #1
+lwl R3, #1
+lw  R2, R3
+mov R3, R2, #0
+lsr R3, #2
+xor R1, R3
+lsl R2, #6
+lsr R2, #7
+xor R1, R2
+lwl R3, #0
+lw  R2, R3
+mov R3, R2, #0
+msk R3, #0
+xor R1, R3
+mov R3, R2, #0
+lsl R3, #1
+lsr R3, #7
+xor R1, R3
+mov R3, R2, #0
+lsl R3, #3 
+lsr R3, #7
+xor R1, R3
+mov R3, R2, #0
+lsl R3, #4
+lsr R3, #7
+xor R1, R3
+lsl R2, #6
+lsr R2, #7
+xor R1, R2
+xor R0, R1
+lsl R1, #1
+xor R1, R0
+lwl R3, #2
+lw  R2, R3
+xor R1, R2
+sw  R1, R3
+lwl R0, #3
+add R0, #2
+swl R0, #3
+lwl R0, #2
+add R0, #2
+swl R0, #2
+lwl R0, #1
+add R0, #2
+swl R0, #1
+lwl R0, #0
+add R0, #2
+swl R0, #0
+sne #30
+bol #0
+#RAISE DONE FLAG

@@ -1,0 +1,239 @@
+lsr R3, #4
+lsr R3, #4
+swl R3, #0
+add R3, #1
+swl R3, #1
+lsl R3, #5
+lw  R1, R3
+lsr R1, #3
+swl R1, #7
+add R3, #1
+swl R3, #6
+lsr R1, #4
+lsr R1, #4
+sw  R1, R3
+add R3, #1
+sw  R1, R3
+add R3, #1
+sw  R1, R3
+swl R1, #5
+lsr R0, #4		 	#3 JUMP LANDS HERE
+lsr R0, #4
+seq #1
+lwl R3, #0
+lw  R1, R3
+lwl R3, #7
+lw  R0, R3
+lsr R1, #3
+xor R0, R1
+sne #0
+boo #18
+lwl R3, #6
+lw  R1, R3
+add R1, #1
+sw  R1, R3
+lwl R0, #5
+sne #0
+boo #6
+add R0, #1
+swl R0, #5
+add R3, #1
+lw  R1, R3
+add R1, #1
+sw  R1, R3
+lwl R3, #6
+add R3, #2
+lw  R1, R3
+add R1, #1
+sw  R1, R3
+lsr R0, #4	 	
+lsr R0, #4
+seq #1
+lwl R3, #0
+lw  R1, R3
+lwl R3, #7
+lw  R0, R3
+lsl R1, #1
+lsr R1, #3
+xor R0, R1
+sne #0
+boo #18
+lwl R3, #6
+lw  R1, R3
+add R1, #1
+sw  R1, R3
+lwl R0, #5
+sne #0
+boo #6
+add R0, #1
+swl R0, #5
+add R3, #1
+lw  R1, R3
+add R1, #1
+sw  R1, R3
+lwl R3, #6
+add R3, #2
+lw  R1, R3
+add R1, #1
+sw  R1, R3
+lsr R0, #4	 	
+lsr R0, #4
+seq #1
+lwl R3, #0 
+lw  R1, R3
+lwl R3, #7
+lw  R0, R3
+lsl R1, #2
+lsr R1, #3
+xor R0, R1
+sne #0
+boo #18
+lwl R3, #6
+lw  R1, R3
+add R1, #1
+sw  R1, R3
+lwl R0, #5
+sne #0
+boo #6
+add R0, #1
+swl R0, #5
+add R3, #1
+lw  R1, R3
+add R1, #1
+sw  R1, R3
+lwl R3, #6
+add R3, #2
+lw  R1, R3
+add R1, #1
+sw  R1, R3
+lsr R0, #4	 	
+lsr R0, #4
+seq #1
+lwl R3, #0
+lw  R1, R3
+lwl R3, #7
+lw  R0, R3
+lsl R1, #3
+lsr R1, #3
+xor R0, R1
+sne #0
+boo #18
+lwl R3, #6
+lw  R1, R3
+add R1, #1
+sw  R1, R3
+lwl R0, #5
+sne #0
+boo #6
+add R0, #1
+swl R0, #5
+add R3, #1
+lw  R1, R3
+add R1, #1
+sw  R1, R3
+lwl R3, #6
+add R3, #2
+lw  R1, R3
+add R1, #1
+sw  R1, R3
+lsr R0, #4	 	
+lsr R0, #4
+seq #1
+lwl R1, #5
+msk R1, #7
+lwl R0, #0
+seq #31
+bol #2
+lsr R0, #4	 	
+lsr R0, #4
+seq #1
+lwl R3, #0
+lw  R1, R3
+add R3, #1
+lw  R2, R3
+lwl R3, #7
+lw  R0, R3
+lsl R1, #4
+lsr R1, #3
+lsr R2, #7
+xor R1, R2
+xor R0, R1
+sne #0
+boo #5
+lwl R3, #6
+add R3, #2
+lw  R1, R3
+add R1, #1
+sw  R1, R3
+lsr R0, #4	 	
+lsr R0, #4
+seq #1
+lwl R3, #0
+lw  R1, R3
+add R3, #1
+lw  R2, R3
+lwl R3, #7
+lw  R0, R3
+lsl R1, #5
+lsr R1, #3
+lsr R2, #6
+xor R1, R2
+xor R0, R1
+sne #0
+boo #5
+lwl R3, #6
+add R3, #2
+lw  R1, R3
+add R1, #1
+sw  R1, R3
+lsr R0, #4	 	
+lsr R0, #4
+seq #1
+lwl R3, #0
+lw  R1, R3
+add R3, #1
+lw  R2, R3
+lwl R3, #7
+lw  R0, R3
+lsl R1, #6
+lsr R1, #3
+lsr R2, #5
+xor R1, R2
+xor R0, R1
+sne #0
+boo #5
+lwl R3, #6
+add R3, #2
+lw  R1, R3
+add R1, #1
+sw  R1, R3
+lsr R0, #4	 	
+lsr R0, #4
+seq #1
+lwl R3, #0
+lw  R1, R3
+add R3, #1
+lw  R2, R3
+lwl R3, #7
+lw  R0, R3
+lsl R1, #7
+lsr R1, #3
+lsr R2, #4
+xor R1, R2
+xor R0, R1
+sne #0
+boo #5
+lwl R3, #6
+add R3, #2
+lw  R1, R3
+add R1, #1
+sw  R1, R3
+lsr R0, #4	 	
+lsr R0, #4
+seq #1
+lwl R0, #0
+add R0, #1
+swl R0, #0
+sne #30
+bol #3
+#RAISE DONE FLAG    #2 JUMP LANDS HERE
