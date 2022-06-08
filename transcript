@@ -1,0 +1,146 @@
+# Compile of TopLevel.sv was successful.
+# Compile of TopLevel_tb.sv failed with 1 errors.
+# Compile of LUT_pc.sv was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of TopLevel_tb.sv was successful.
+vsim work.TopLevel_tb
+# vsim work.TopLevel_tb 
+# Start time: 08:53:54 on Jun 08,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(194): (vopt-2241) Connection width does not match width of port 'LUTdata'. The port definition is at: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/RegFile.sv(23).
+# ** Error (suppressible): C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(150): (vopt-2912) Port 'EntryReg' not found in module 'LUT' (1st connection).
+# ** Error (suppressible): C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(150): (vopt-2912) Port 'MuxReg' not found in module 'LUT' (2nd connection).
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(150): (vopt-2241) Connection width does not match width of port 'Target'. The port definition is at: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT.sv(14).
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(145): (vopt-2241) Connection width does not match width of port 'Addr'. The port definition is at: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT.sv(13).
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(140): (vopt-2241) Connection width does not match width of port 'Addr'. The port definition is at: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT.sv(13).
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=4.
+# Error loading design
+# End time: 08:53:57 on Jun 08,2022, Elapsed time: 0:00:03
+# Errors: 2, Warnings: 7
+# Compile of TopLevel.sv was successful.
+vsim work.TopLevel_tb
+# vsim work.TopLevel_tb 
+# Start time: 09:10:37 on Jun 08,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(197): (vopt-2241) Connection width does not match width of port 'LUTdata'. The port definition is at: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/RegFile.sv(23).
+# ** Error (suppressible): C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(153): (vopt-2912) Port 'EntryReg' not found in module 'LUT' (1st connection).
+# ** Error (suppressible): C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(153): (vopt-2912) Port 'MuxReg' not found in module 'LUT' (2nd connection).
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(153): (vopt-2241) Connection width does not match width of port 'Target'. The port definition is at: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT.sv(14).
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(148): (vopt-2241) Connection width does not match width of port 'Addr'. The port definition is at: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT.sv(13).
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(143): (vopt-2241) Connection width does not match width of port 'Addr'. The port definition is at: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT.sv(13).
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=4.
+# Error loading design
+# End time: 09:10:39 on Jun 08,2022, Elapsed time: 0:00:02
+# Errors: 2, Warnings: 6
+# Compile of TopLevel.sv was successful.
+vsim work.TopLevel_tb
+# vsim work.TopLevel_tb 
+# Start time: 09:47:10 on Jun 08,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error (suppressible): C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(153): (vopt-2732) Module parameter 'W' not found for override.
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Error loading design
+# End time: 09:47:12 on Jun 08,2022, Elapsed time: 0:00:02
+# Errors: 1, Warnings: 2
+# Compile of TopLevel.sv was successful.
+# Compile of LUT_2x_dm.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.TopLevel_tb
+# vsim work.TopLevel_tb 
+# Start time: 09:48:39 on Jun 08,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(197): (vopt-2241) Connection width does not match width of port 'LUTdata'. The port definition is at: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/RegFile.sv(23).
+# ** Error (suppressible): C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(153): (vopt-2912) Port 'EntryReg' not found in module 'LUT' (1st connection).
+# ** Error (suppressible): C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(153): (vopt-2912) Port 'MuxReg' not found in module 'LUT' (2nd connection).
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(153): (vopt-2241) Connection width does not match width of port 'Target'. The port definition is at: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT.sv(14).
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(148): (vopt-2241) Connection width does not match width of port 'Addr'. The port definition is at: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT.sv(13).
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(143): (vopt-2241) Connection width does not match width of port 'Addr'. The port definition is at: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT.sv(13).
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=4.
+# Error loading design
+# End time: 09:48:41 on Jun 08,2022, Elapsed time: 0:00:02
+# Errors: 2, Warnings: 6
+# Compile of TopLevel.sv was successful.
+# Compile of LUT_2x_dm.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.TopLevel_tb
+# vsim work.TopLevel_tb 
+# Start time: 09:55:33 on Jun 08,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(140): Module 'LUT1' is not defined.
+#  For instance 'LUT_pc' at path 'TopLevel_tb.DUT'
+# ** Error: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(145): Module 'LUT2' is not defined.
+#  For instance 'LUT_dm' at path 'TopLevel_tb.DUT'
+# ** Error: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(150): Module 'LUT3' is not defined.
+#  For instance 'LUT_2x_dm' at path 'TopLevel_tb.DUT'
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=3, Warnings=0.
+# Error loading design
+# End time: 09:55:35 on Jun 08,2022, Elapsed time: 0:00:02
+# Errors: 3, Warnings: 2
+# Compile of TopLevel.sv was successful.
+vsim work.TopLevel_tb
+# vsim work.TopLevel_tb 
+# Start time: 09:56:55 on Jun 08,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(140): Module 'LUT1' is not defined.
+#  For instance 'LUT_pc' at path 'TopLevel_tb.DUT'
+# ** Error: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(145): Module 'LUT2' is not defined.
+#  For instance 'LUT_dm' at path 'TopLevel_tb.DUT'
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=0.
+# Error loading design
+# End time: 09:56:57 on Jun 08,2022, Elapsed time: 0:00:02
+# Errors: 2, Warnings: 2
+# Compile of TopLevel.sv was successful.
+vsim work.TopLevel_tb
+# vsim work.TopLevel_tb 
+# Start time: 09:57:41 on Jun 08,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(194): (vopt-2241) Connection width does not match width of port 'LUTdata'. The port definition is at: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/RegFile.sv(23).
+# ** Warning: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv(150): (vopt-2241) Connection width does not match width of port 'Target'. The port definition is at: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_2x_dm.sv(17).
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# Loading sv_std.std
+# Loading work.Definitions(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.TopLevel_tb(fast)
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "../data_mem.hex" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/DataMem.sv(33)
+#    Time: 0 ps  Iteration: 0  Instance: /TopLevel_tb/DUT/IR1
+# xxxx_xxxx
+# ------------------------------------------
+# xxxx_xxxx
+# last instruction =  171 || sim time              1765000
+# ** Note: $stop    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv(61)
+#    Time: 1775 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break at C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv line 61
+quit -sim
+# End time: 10:02:07 on Jun 08,2022, Elapsed time: 0:04:26
+# Errors: 0, Warnings: 5
+vsim work.TopLevel_tb
+# vsim work.TopLevel_tb 
+# Start time: 10:02:21 on Jun 08,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading sv_std.std
+# Loading work.Definitions(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.TopLevel_tb(fast)
+add wave -position insertpoint  \
+sim:/TopLevel_tb/DUT/IR1/inst_rom
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "../data_mem.hex" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/DataMem.sv(33)
+#    Time: 0 ps  Iteration: 0  Instance: /TopLevel_tb/DUT/IR1
+# xxxx_xxxx
+# ------------------------------------------
+# xxxx_xxxx
+# last instruction =  171 || sim time              1765000
+# ** Note: $stop    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv(61)
+#    Time: 1775 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break at C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv line 61

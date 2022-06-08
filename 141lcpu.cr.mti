@@ -1,10 +1,11 @@
-{C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_pc.sv} {0 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_pc.sv}
+{C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_pc.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_pc.sv}
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling module LUT_pc
-** Error: (vlog-13057) C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_pc.sv(21): near "[end of file]": Expecting numeric digits.
-** Error: (vlog-13057) C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_pc.sv(23): near "[end of file]": Expecting numeric digits.
 
-} {4.0 6.0} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv}
+Top level modules:
+	LUT_pc
+
+} {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv}
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling module ALU_tb
 
@@ -70,6 +71,13 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 
 Top level modules:
 	ProgCtr_tb
+
+} {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:\Users\jeann\Desktop\141LTermProject\basic processor Verilog\TopLevel_tb.sv}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module TopLevel_tb
+
+Top level modules:
+	TopLevel_tb
 
 } {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/DataMem.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/DataMem.sv}
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021

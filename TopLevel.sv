@@ -137,19 +137,19 @@ ProgCtr PC1 (
 
 assign TargSrc = Ctrl_BOL_out ? LUT1_Target_out : Active_InstOut[4:0];
 // this is one way to 'expand' the range of jumps available
-LUT LUT_pc(
+LUT_pc LUT1(
   .Addr         (Active_InstOut[4:1]),
   .Target       (LUT1_Target_out)
 );
 
-LUT LUT_dm(
+LUT_dm LUT2(
   .Addr         (Active_InstOut[2:0]),
   .Target       (LUTdm_Target_out)
 );
 
-LUT LUT_2x_dm(
-  .EntryReg     (Active_InstOut[4:3]),
-  .MuxReg       (Active_InstOut[2:1]),
+LUT_2x_dm #(.W(8)) LUT3(
+  .EntryReg     (RF1_DataOutA_out),
+  .MuxReg       (RF1_DataOutB_out),
   .Target       (LUTdm2_Target_out)
 );
 // Note that it may be simpler to handle Start here; depends on your design!

@@ -59,7 +59,6 @@ initial begin
   // contrast to $finish, which ends the simulation.
 
   #10 $stop;
-`endif
 end
 
 // This generates the system clock
