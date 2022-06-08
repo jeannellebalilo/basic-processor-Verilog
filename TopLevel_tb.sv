@@ -57,9 +57,7 @@ initial begin
   // Note: $stop acts like a breakpoint, pausing the simulation
   // and allowing certain tools to interact with it more, in
   // contrast to $finish, which ends the simulation.
-`ifdef __ICARUS__
-  #10 $finish;
-`else
+
   #10 $stop;
 `endif
 end
@@ -70,47 +68,7 @@ always begin   // clock period = 10 Verilog time units
   #5 Clk = 1'b0;
 end
 
-`ifdef __ICARUS__
-// This directive is used by some toolchains (icarus, vcs, others)
-// to generate waveforms. Questa/ModelSim creates these as arguments
-// passed the simulator, so don't want to overwrite when running in
-// those environments (hence the `ifdef guard).
-integer i;
-initial begin
-  // Create a "Value Change Dump" file, which records every value
-  // that changed during simulation [notice: this is why you have
-  // to re-run simulation when you make changes before anything
-  // shows up in the waveform!]
-  $dumpfile("basic_proc.vcd");
 
-  // Specify which signals to dump. With no arguments, it will
-  // dump everything. Our design is small enough that (on modern
-  // hardware), we can get away with this.
-  $dumpvars();
-
-  // Annoyingly (or sensibly, arguably, as memory is large) this
-  // doesn't penetrate array types by default, so we have to be
-  // explicit for the things that a 'worth' dumping all the time
-  // (registers, registers are worth it, promise).
-  //
-  // With icarus, there's also a cosmetic bit to mind, this will
-  // dump out a whole bunch of warnings, namely:
-  //   VCD warning: array word TopLevel_tb.DUT.RF1.Registers[0]
-  //   will conflict with an escaped identifier.
-  // The VCD file format is limited, so the zeroth output register
-  // will be renamed to \Registers[0], which _technically_ could
-  // conflict with the name of another existing variable. In
-  // practice, this falls into the bin of warnings that can be
-  // safely ignored.
-  for (i=0; i<8; i=i+1)
-    $dumpvars(1, DUT.RF1.Registers[i]);
-
-  // But we should install a quick safety net. If your design
-  // runs forever, you can create huge dump files on accident,
-  // so install a limit:
-  $dumplimit(104857600); // 2**20*100 = 100 MB, plenty.
-end
-`endif
 
 endmodule
 
