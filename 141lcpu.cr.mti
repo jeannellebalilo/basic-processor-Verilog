@@ -58,13 +58,6 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 Top level modules:
 	LUT
 
-} {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/RegFile.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/RegFile.sv}
-Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module RegFile
-
-Top level modules:
-	RegFile
-
 } {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ProgCtr_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ProgCtr_tb.sv}
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling module ProgCtr_tb
@@ -78,13 +71,6 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 
 Top level modules:
 	TopLevel_tb
-
-} {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/DataMem.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/DataMem.sv}
-Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module DataMem
-
-Top level modules:
-	DataMem
 
 } {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/Definitions.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/Definitions.sv}
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021

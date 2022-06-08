@@ -30,7 +30,7 @@ always_comb
 
 // Load the initial contents of memory
 initial begin
-  $readmemh("../data_mem.hex", Core);
+  $readmemh("./data_mem.hex", Core);
 end
 
 // writes are sequential

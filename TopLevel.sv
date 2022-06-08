@@ -43,7 +43,7 @@ wire [ 9:0] PC1_ProgCtr_out;  // the program counter
 // something more informative probably...
 wire [ 9:0] LUT1_Target_out;  // Target of branch/jump
 wire [ 9:0] LUTdm_Target_out;
-wire [ 8:0] LUTdm2_Target_out;
+wire [ 7:0] LUTdm2_Target_out;
 
 // Control block outputs
 logic       Ctrl1_Jump_out;      // to program counter: jump
