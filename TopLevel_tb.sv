@@ -42,12 +42,49 @@ initial begin
   #10 Reset = 'b0;
   #10 Req   = 'b1;
 
+  // TODO: fill in the memory locations here
+  DUT.DM1.Core[0] = 'b01010101;
+  DUT.DM1.Core[1] = 'b00000101;
+  DUT.DM1.Core[2] = 'b01010101;
+  DUT.DM1.Core[3] = 'b00000101;
+  DUT.DM1.Core[4] = 'b01010101;
+  DUT.DM1.Core[5] = 'b00000101;
+  DUT.DM1.Core[6] = 'b01010101;
+  DUT.DM1.Core[7] = 'b00000101;
+  DUT.DM1.Core[8] = 'b01010101;
+  DUT.DM1.Core[9] = 'b00000101;
+  DUT.DM1.Core[10] = 'b01010101;
+  DUT.DM1.Core[11] = 'b00000101;
+  DUT.DM1.Core[12] = 'b01010101;
+  DUT.DM1.Core[13] = 'b00000101;
+  DUT.DM1.Core[14] = 'b01010101;
+  DUT.DM1.Core[15] = 'b00000101;
+  DUT.DM1.Core[16] = 'b01010101;
+  DUT.DM1.Core[17] = 'b00000101;
+  DUT.DM1.Core[18] = 'b01010101;
+  DUT.DM1.Core[19] = 'b00000101;
+  DUT.DM1.Core[20] = 'b01010101;
+  DUT.DM1.Core[21] = 'b00000101;
+  DUT.DM1.Core[22] = 'b01010101;
+  DUT.DM1.Core[23] = 'b00000101;
+  DUT.DM1.Core[24] = 'b01010101;
+  DUT.DM1.Core[25] = 'b00000101;
+  DUT.DM1.Core[26] = 'b01010101;
+  DUT.DM1.Core[27] = 'b00000101;
+  DUT.DM1.Core[28] = 'b01010101;
+  DUT.DM1.Core[29] = 'b00000101;
+
   // launch program in DUT
   #10 Req = 0;
 
   // Wait for done flag, then display results
   wait (Ack);
   #10 $display("------------------------------------------");
+
+  if (DUT.DM1.Core[59] != 'b10101010) begin
+    $display("ERROR, mem[59] should be %b", 'b10101010);
+  end
+
   #10 $displayh(DUT.DM1.Core[0],
                 DUT.DM1.Core[1],"_",
                 DUT.DM1.Core[2],

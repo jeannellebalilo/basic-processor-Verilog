@@ -42,7 +42,7 @@ boo - 1011  lut - 1100
 bol - 1101  msk - 1110
 */
 
-assign Opcode = Instruction[8:5];
+// assign Opcode = {Instruction[8:5]};
 
 // reserve instruction = 9'b111111111; for Ack
 assign Ack = &Instruction;
@@ -59,56 +59,56 @@ always_comb begin
   LUT2x = 0;
   Jump = 0;
   SetInst = 0;
-  case (Opcode)
-    0000: RegWrEn = 1;
-    0001: begin
+  case (Instruction[8:5])
+    LW: RegWrEn = 1;
+    LWL: begin
       RegWrEn = 1;
       LUTdm = 1;
     end
-    0010: begin
+    SW: begin
       MemWrEn = 1;
       LUTdm = 1;
     end
-    0011: MemWrEn = 1;
-    0100: begin
+    SWL: MemWrEn = 1;
+    XOR: begin
       ALUEn = 1;
       RegWrEn = 1;
     end
-    0101: begin
+    ADD: begin
       ALUEn = 1;
       RegWrEn = 1;
     end
-    0110: begin
+    LSR: begin
       ALUEn = 1;
       RegWrEn = 1;
     end
-    0111: begin
+    LSL: begin
       ALUEn = 1;
       RegWrEn = 1;
     end
-    1000: begin
+    MOV: begin
       RegWrEn = 1;
       ALUEn = 1;
     end
-    1001: begin
-      ALUEn = 1;
-      RegWrEn = 1;
-      Jump = 1;
-      SetInst = 1;
-    end
-    1010: begin
+    SNE: begin
       ALUEn = 1;
       RegWrEn = 1;
       Jump = 1;
       SetInst = 1;
     end
-    1011: BranchEn = 1;
-    1100: LUT2x = 1; 
-    1101: begin
+    SEQ: begin
+      ALUEn = 1;
+      RegWrEn = 1;
+      Jump = 1;
+      SetInst = 1;
+    end
+    BOO: BranchEn = 1;
+    LUT: LUT2x = 1; 
+    BOL: begin
       BranchEn = 1;
       BOLEn = 1;
     end
-    1110:begin
+    MSK:begin
       ALUEn = 1;
       RegWrEn = 1;
     end
