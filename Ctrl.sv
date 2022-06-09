@@ -65,11 +65,11 @@ always_comb begin
       RegWrEn = 1;
       LUTdm = 1;
     end
-    SW: begin
+    SW: MemWrEn = 1;
+    SWL: begin
       MemWrEn = 1;
       LUTdm = 1;
     end
-    SWL: MemWrEn = 1;
     XOR: begin
       ALUEn = 1;
       RegWrEn = 1;

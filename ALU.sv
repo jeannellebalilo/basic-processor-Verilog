@@ -11,6 +11,7 @@ module ALU #(parameter W=8, Ops=4)(
   input        [W-1:0]   InputA,       // data inputs
                          InputB,
   input        [4:0]     Immediate,    // 5-bit immediate
+  input        [2:0]     Loop,         // 3-bit immediate
   input        [Ops-1:0] OP,           // ALU opcode, part of microcode
   input                  SC_in,        // shift or carry in
   output logic [W-1:0]   Out,          // data output
@@ -24,18 +25,17 @@ module ALU #(parameter W=8, Ops=4)(
 op_mne op_mnemonic;
 assign difference = InputA - Immediate;
 assign mask = 8'b1;
-assign loop = Immediate[2:0];   // 3-bit immediate
 always_comb begin
   // No Op = default
   Out = 0;
 
   case(OP)
-    ADD : Out = InputA + loop;        // add with 3-bit immediate
+    ADD : Out = InputA + Loop;        // add with 3-bit immediate
 
     // lsl will loop, inserting 0's on the right for '3-bit immediate' amount of times
     LSL : begin
       Out = InputA;
-      repeat (loop) begin
+      repeat (Loop) begin
         Out = {Out[6:0], 1'b0};
       end
     end
@@ -43,7 +43,7 @@ always_comb begin
     // lsr will loop, inserting 0's on the left for '3-bit immediate' amount of times
     LSR : begin
       Out = InputA;
-      repeat (loop) begin
+      repeat (Loop) begin
         Out = {1'b0, Out[7:1]};
       end
     end

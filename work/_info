@@ -29,6 +29,15 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -38,16 +47,15 @@ R0
 cModel Technology
 Z1 dC:/intelFPGA_lite/21.1
 T_opt
-!s110 1654729059
-VazDYOmEZ9jRF^Ab4?1_fa2
+!s110 1654792260
+Vk]JSmX0`n[LCCJSdWB2;d2
 Z2 04 11 4 work TopLevel_tb fast 0
-=3-d8cb8aa40dc3-62a12962-e7-aa54
+=9-d8cb8aa40dc3-62a22043-13f-2100
 Z3 !s124 OEM10U11 
 Z4 o-quiet -auto_acc_if_foreign -work work +acc
 Z5 tCvgOpt 0
 n@_opt
 Z6 OL;O;2021.2;73
-R1
 T_opt1
 !s110 1652120991
 Vf7gCV[nNB2OKQZ<<^F9h53
@@ -60,37 +68,38 @@ n@_opt1
 R6
 R1
 T_opt2
-!s110 1654734275
-VYdE8gILlf0J][BI9QG@=V2
+!s110 1654787405
+VgV0RJneAg_?i3bXiZV]k?3
 R2
-=1-d8cb8aa40dc3-62a13dc2-35c-a69c
+=1-d8cb8aa40dc3-62a20d4c-7c-5468
 R3
 o-quiet -auto_acc_if_foreign -work work
 R5
 n@_opt2
 R6
+R1
 vALU
 Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
 Z8 DXx4 work 11 Definitions 0 22 b4D_=O]n6TfB`5k2jD;hM1
 DXx4 work 11 ALU_sv_unit 0 22 UD23[UO[z4^idMofcPGDA2
-Z9 !s110 1654038341
+Z9 !s110 1654792030
 Z10 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 !i10b 1
-!s100 ;d8nC<c53b`c^n[N^A_nf0
-I4[fe2:_BUOnjdS4ZLai=>0
+!s100 k95e]6PamTVGn3fW35WEU3
+IRLlkgka@SEe`_g9?_4U4R2
 !s105 ALU_sv_unit
 S1
 Z11 dC:/Users/jeann/Desktop/141LTermProject/basic processor Verilog
-Z12 w1653669186
+Z12 w1654792018
 Z13 8C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU.sv
 Z14 FC:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU.sv
-!i122 117
+!i122 196
 L0 10 82
 Z15 OL;L;2021.2;73
 31
-Z16 !s108 1654038340.000000
+Z16 !s108 1654792029.000000
 Z17 !s107 C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU.sv|
 Z18 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU.sv|
 !i113 0
@@ -113,7 +122,7 @@ R11
 R12
 R13
 R14
-!i122 117
+!i122 196
 L0 8 0
 R15
 31
@@ -126,7 +135,7 @@ R5
 n@a@l@u_sv_unit
 vALU_tb
 R7
-R9
+!s110 1654734645
 !i10b 1
 !s100 <>DW@N^n1WVboXZA4DeIS0
 IZUXLNbbj_nPBUQoRNP3aT2
@@ -135,14 +144,14 @@ R11
 w1652140188
 8C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv
 FC:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv
-!i122 118
+!i122 176
 L0 17 95
 R10
 R15
 r1
 !s85 0
 31
-Z20 !s108 1654038341.000000
+Z20 !s108 1654734645.000000
 !s107 C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU_tb.sv|
 !i113 0
@@ -153,24 +162,24 @@ vCtrl
 R7
 R8
 DXx4 work 12 Ctrl_sv_unit 0 22 0Em8f6U017LPSWN^[ATFd3
-Z21 !s110 1654733202
+Z21 !s110 1654787390
 R10
 r1
 !s85 0
 !i10b 1
-!s100 YRIUR7z`ej[Wk^]M?IFdj3
-I@VB7M^0RCBG48d<ffdJ:H1
+!s100 BjNTGN6?HDK[1R>O0d3J=2
+I6faUQBYZ9:l8]RF7k69^a2
 !s105 Ctrl_sv_unit
 S1
 R11
-Z22 w1654729111
+Z22 w1654787385
 Z23 8C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/Ctrl.sv
 Z24 FC:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/Ctrl.sv
-!i122 157
+!i122 190
 L0 13 117
 R15
 31
-Z25 !s108 1654733202.000000
+Z25 !s108 1654787389.000000
 Z26 !s107 C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/Ctrl.sv|
 Z27 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/Ctrl.sv|
 !i113 0
@@ -193,7 +202,7 @@ R11
 R22
 R23
 R24
-!i122 157
+!i122 190
 L0 9 0
 R15
 31
@@ -206,23 +215,23 @@ R5
 n@ctrl_sv_unit
 vDataMem
 R7
-!s110 1654734267
+Z28 !s110 1654734646
 !i10b 1
-!s100 _47P_a=RMHzFM:S<0cZJz0
-I]DGGD:OES?GRK4I^[?J2_1
+!s100 ^D?;W`@7LO?LSczN8>_SQ0
+I<kH@dYh^zTJB5;`eODgQ]0
 S1
 R11
-w1654734262
+w1654734301
 8C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/DataMem.sv
 FC:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/DataMem.sv
-!i122 159
-L0 15 39
+!i122 178
+L0 15 35
 R10
 R15
 r1
 !s85 0
 31
-!s108 1654734267.000000
+R20
 !s107 C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/DataMem.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/DataMem.sv|
 !i113 0
@@ -231,7 +240,7 @@ R5
 n@data@mem
 XDefinitions
 R7
-R9
+R28
 !i10b 1
 !s100 6WWkn?ca]nof<k_<bd_l23
 Ib4D_=O]n6TfB`5k2jD;hM1
@@ -240,14 +249,14 @@ R11
 w1652140171
 8C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/Definitions.sv
 FC:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/Definitions.sv
-!i122 121
+!i122 179
 L0 10 0
 Vb4D_=O]n6TfB`5k2jD;hM1
 R15
 r1
 !s85 0
 31
-R20
+Z29 !s108 1654734646.000000
 !s107 C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/Definitions.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/Definitions.sv|
 !i113 0
@@ -256,7 +265,7 @@ R5
 n@definitions
 vFinalSubmission_tb
 R7
-R9
+R28
 !i10b 1
 !s100 di5>Y6aXXfKg2^CKI@b<P2
 ISBFc:[;fUm2?JmhK_:1LY3
@@ -265,14 +274,14 @@ R11
 w1651266450
 8C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/FinalSubmission_tb.sv
 FC:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/FinalSubmission_tb.sv
-!i122 122
+!i122 180
 L0 16 128
 R10
 R15
 r1
 !s85 0
 31
-R20
+R29
 !s107 C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/FinalSubmission_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/FinalSubmission_tb.sv|
 !i113 0
@@ -281,7 +290,7 @@ R5
 n@final@submission_tb
 vInstROM
 R7
-R9
+!s110 1654734647
 !i10b 1
 !s100 >TgE`zlJ76;b_4[g4T5BH1
 I[5[<8N]7coDocEmSh17070
@@ -290,14 +299,14 @@ R11
 w1654032431
 8C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/InstROM.sv
 FC:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/InstROM.sv
-!i122 123
+!i122 181
 L0 13 89
 R10
 R15
 r1
 !s85 0
 31
-R20
+R29
 !s107 C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/InstROM.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/InstROM.sv|
 !i113 0
@@ -331,7 +340,7 @@ R5
 n@l@u@t
 vLUT_2x_dm
 R7
-!s110 1654707324
+Z30 !s110 1654734658
 !i10b 1
 !s100 i2L8jJP3anXCaf`UUL9<e3
 IA=U>@6lS;Af:5i]FicQF33
@@ -340,14 +349,14 @@ R11
 w1654706982
 8C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_2x_dm.sv
 FC:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_2x_dm.sv
-!i122 139
+!i122 187
 L0 14 57
 R10
 R15
 r1
 !s85 0
 31
-!s108 1654707324.000000
+Z31 !s108 1654734658.000000
 !s107 C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_2x_dm.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_2x_dm.sv|
 !i113 0
@@ -356,7 +365,7 @@ R5
 n@l@u@t_2x_dm
 vLUT_dm
 R7
-Z28 !s110 1654038343
+!s110 1654734660
 !i10b 1
 !s100 ;FKYFP4P0fY5D?8GX`IO20
 IID08[`2lMoNWSldQ`T<Y93
@@ -365,14 +374,14 @@ R11
 w1654033720
 8C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_dm.sv
 FC:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_dm.sv
-!i122 130
+!i122 188
 L0 12 22
 R10
 R15
 r1
 !s85 0
 31
-Z29 !s108 1654038343.000000
+!s108 1654734660.000000
 !s107 C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_dm.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_dm.sv|
 !i113 0
@@ -381,7 +390,7 @@ R5
 n@l@u@t_dm
 vLUT_pc
 R7
-!s110 1654703561
+!s110 1654734664
 !i10b 1
 !s100 FbAV:LD4d]QNzNQ3?efEV2
 IZCTR21]ZV`gV>ln^AnP^_3
@@ -390,14 +399,14 @@ R11
 w1654703500
 8C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_pc.sv
 FC:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_pc.sv
-!i122 132
+!i122 189
 L0 9 30
 R10
 R15
 r1
 !s85 0
 31
-!s108 1654703561.000000
+!s108 1654734664.000000
 !s107 C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_pc.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_pc.sv|
 !i113 0
@@ -406,7 +415,7 @@ R5
 n@l@u@t_pc
 vProgCtr
 R7
-R28
+!s110 1654734657
 !i10b 1
 !s100 hk[gbbZReAfh`CAiUQ4]C0
 IiK:1T_I71lPNYmaodAII60
@@ -415,14 +424,14 @@ R11
 w1653674881
 8C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ProgCtr.sv
 FC:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ProgCtr.sv
-!i122 124
+!i122 182
 L0 13 61
 R10
 R15
 r1
 !s85 0
 31
-R29
+Z32 !s108 1654734657.000000
 !s107 C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ProgCtr.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ProgCtr.sv|
 !i113 0
@@ -431,7 +440,7 @@ R5
 n@prog@ctr
 vProgCtr_tb
 R7
-R28
+R30
 !i10b 1
 !s100 1IDek=2nGQ=::RlEC8b>i2
 If=dfLJRj3EbLQe^;=eJV02
@@ -440,14 +449,14 @@ R11
 w1652120905
 8C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ProgCtr_tb.sv
 FC:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ProgCtr_tb.sv
-!i122 128
+!i122 186
 L0 4 127
 R10
 R15
 r1
 !s85 0
 31
-R29
+R31
 !s107 C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ProgCtr_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ProgCtr_tb.sv|
 !i113 0
@@ -456,23 +465,23 @@ R5
 n@prog@ctr_tb
 vRegFile
 R7
-!s110 1654721753
+!s110 1654792249
 !i10b 1
 !s100 M3KJP44>g[TB`n5X_i7Jf3
 IXdD]acBD@b08`Xb;:9mj:3
 S1
 R11
-w1654721123
+w1654792243
 8C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/RegFile.sv
 FC:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/RegFile.sv
-!i122 143
+!i122 197
 L0 12 52
 R10
 R15
 r1
 !s85 0
 31
-!s108 1654721753.000000
+!s108 1654792249.000000
 !s107 C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/RegFile.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/RegFile.sv|
 !i113 0
@@ -481,23 +490,23 @@ R5
 n@reg@file
 vTopLevel
 R7
-!s110 1654728982
+!s110 1654792002
 !i10b 1
-!s100 X1S^kca=k7EY>:NoTk<4:1
-If0LDL;4@b:2i^_Ti;5ea^0
+!s100 PR8PQPaUec6o9L4ogiUk[3
+I`327U?QV5RH:F`K^ceNIF1
 S1
 R11
-w1654728958
+w1654791946
 8C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv
 FC:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv
-!i122 155
-L0 5 276
+!i122 195
+L0 5 277
 R10
 R15
 r1
 !s85 0
 31
-!s108 1654728981.000000
+!s108 1654792002.000000
 !s107 C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv|
 !i113 0
@@ -506,25 +515,25 @@ R5
 n@top@level
 vTopLevel_tb
 R7
-!s110 1654725308
+R30
 !i10b 1
 !s100 QN>KL?TlfgV<RFB1?TbTT3
-I:6AjZlO97DLOTP^4BalE=0
+I3=FAR=gADzH>5lFO947aJ2
 S1
 R11
 w1654725292
-8C:\Users\jeann\Desktop\141LTermProject\basic processor Verilog\TopLevel_tb.sv
-FC:\Users\jeann\Desktop\141LTermProject\basic processor Verilog\TopLevel_tb.sv
-!i122 148
+8C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv
+FC:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv
+!i122 185
 L0 9 101
 R10
 R15
 r1
 !s85 0
 31
-!s108 1654725307.000000
-!s107 C:\Users\jeann\Desktop\141LTermProject\basic processor Verilog\TopLevel_tb.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:\Users\jeann\Desktop\141LTermProject\basic processor Verilog\TopLevel_tb.sv|
+R32
+!s107 C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv|
 !i113 0
 R19
 R5

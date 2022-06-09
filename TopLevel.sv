@@ -240,6 +240,7 @@ ALU ALU1 (
   .InputA     (InA),
   .InputB     (InB),
   .Immediate  (Active_InstOut[4:0]),
+  .Loop       (Active_InstOut[2:0]),
   .SC_in      (1'b1),
   .OP         (Active_InstOut[8:5]),
   .Out        (ALU1_Out_out),
