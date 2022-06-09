@@ -34,7 +34,7 @@ initial begin
 end
 
 // writes are sequential
-always_ff @ (posedge Clk)
+always @ (posedge Clk)
   /*
   // Reset response is needed only for initialization.
   // (see inital $readmemh above for another choice)
@@ -42,10 +42,7 @@ always_ff @ (posedge Clk)
   // If you do not need to preload your data memory with any constants,
   // you may omit the `if (Reset) ... else` and go straight to `if(WriteEn)`
   */
-
-  if(Reset) begin
-    // Usually easier to initialize memory by reading from file, as above.
-  end else if(WriteEn) begin
+if(WriteEn) begin
     // Do the actual writes
     Core[DataAddress] <= DataIn;
   end
