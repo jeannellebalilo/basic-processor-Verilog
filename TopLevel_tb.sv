@@ -43,6 +43,8 @@ initial begin
   #10 Req   = 'b1;
 
   // TODO: fill in the memory locations here
+  DUT.DM1.Core[64] = 8'b100;
+  DUT.DM1.Core[0] = 8'b1000;
   /*DUT.DM1.Core[0] = 'b01010101;
   DUT.DM1.Core[1] = 'b1;
   DUT.DM1.Core[2] = 'b01010101;

@@ -1,6 +1,7 @@
-add r0, #2          # r0 = 0000_0010                good
-add r1, #1          # r1 = 0000_0001                why does r0 move one bit over
-sw r0, r1           # mem[1] = 0000_0010            good
-swl r0, #0          # mem[64] = 0000_0010           wrong mem address?
-lwl r2, #0          # r2 = mem[64] (0000_0010)      ^
-lw r3, r1           # r3 = mem[1] (0000_0010)       good
+lwl r0, #0          # r0 = mem[64] (0000_0100)
+lw  r1, r2          # r1 = mem[r2] (r2 = 0, mem[0] = 0000_1000)
+sne #4          # jr = 0
+sne #1          # jr = 1
+seq #8          # jr = 1
+seq #4          # jr = 0
+#end

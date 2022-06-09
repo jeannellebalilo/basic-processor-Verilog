@@ -619,3 +619,420 @@ run -all
 # ** Note: $stop    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv(98)
 #    Time: 135 ns  Iteration: 0  Instance: /TopLevel_tb
 # Break in Module TopLevel_tb at C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv line 98
+# Compile of ALU.sv was successful.
+# Compile of TopLevel.sv was successful.
+# Compile of TopLevel_tb.sv was successful.
+# 3 compiles, 0 failed with no errors.
+add wave -position insertpoint  \
+sim:/TopLevel_tb/DUT/DM1/Core
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+run -all
+# xxxx_xxxx
+restart -f
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+run -all
+# xxxx_xxxx
+# ------------------------------------------
+# 08xx_xxxx
+# last instruction =    5 || sim time               105000
+# ** Note: $stop    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv(100)
+#    Time: 115 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break in Module TopLevel_tb at C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv line 100
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+run -all
+# xxxx_xxxx
+# ------------------------------------------
+# 40xx_xxxx
+# last instruction =    6 || sim time               115000
+# ** Note: $stop    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv(100)
+#    Time: 125 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break in Module TopLevel_tb at C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv line 100
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+run -all
+# xxxx_xxxx
+# ------------------------------------------
+# 40xx_xxxx
+# last instruction =    6 || sim time               115000
+# ** Note: $stop    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv(100)
+#    Time: 125 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break in Module TopLevel_tb at C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv line 100
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+run -all
+# xxxx_xxxx
+# ------------------------------------------
+# 01xx_xxxx
+# last instruction =    6 || sim time               115000
+# ** Note: $stop    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv(100)
+#    Time: 125 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break in Module TopLevel_tb at C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv line 100
+add wave -position insertpoint  \
+sim:/TopLevel_tb/DUT/RF1/JumpReg
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+run -all
+# xxxx_xxxx
+# ------------------------------------------
+# 08xx_xxxx
+# last instruction =    7 || sim time               125000
+# ** Note: $stop    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv(100)
+#    Time: 135 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break in Module TopLevel_tb at C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv line 100
+# Compile of ALU.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+run -all
+# xxxx_xxxx
+# ------------------------------------------
+# 08xx_xxxx
+# last instruction =    7 || sim time               125000
+# ** Note: $stop    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv(100)
+#    Time: 135 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break in Module TopLevel_tb at C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv line 100
+# Compile of RegFile.sv failed with 1 errors.
+# Compile of RegFile.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+run -all
+# xxxx_xxxx
+# ------------------------------------------
+# 08xx_xxxx
+# last instruction =    7 || sim time               125000
+# ** Note: $stop    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv(100)
+#    Time: 135 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break in Module TopLevel_tb at C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv line 100
+# Compile of RegFile.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+run -all
+# xxxx_xxxx
+# ------------------------------------------
+# 08xx_xxxx
+# last instruction =    7 || sim time               125000
+# ** Note: $stop    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv(100)
+#    Time: 135 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break in Module TopLevel_tb at C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv line 100
+add wave -position insertpoint  \
+sim:/TopLevel_tb/DUT/Ctrl1/SetInst
+add wave -position insertpoint  \
+sim:/TopLevel_tb/DUT/Ctrl1/Jump
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+run -all
+# xxxx_xxxx
+# ------------------------------------------
+# 08xx_xxxx
+# last instruction =    7 || sim time               125000
+# ** Note: $stop    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv(100)
+#    Time: 135 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break in Module TopLevel_tb at C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv line 100
+# Compile of RegFile.sv failed with 1 errors.
+# Compile of RegFile.sv was successful.
+add wave -position insertpoint  \
+sim:/TopLevel_tb/DUT/RF1/JumpRegister
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+run -all
+# xxxx_xxxx
+# ------------------------------------------
+# 08xx_xxxx
+# last instruction =    7 || sim time               125000
+# ** Note: $stop    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv(100)
+#    Time: 135 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break in Module TopLevel_tb at C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv line 100
+add wave -position insertpoint  \
+sim:/TopLevel_tb/DUT/Ctrl1/RegWrEn
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+run -all
+# xxxx_xxxx
+# ------------------------------------------
+# 08xx_xxxx
+# last instruction =    7 || sim time               125000
+# ** Note: $stop    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv(100)
+#    Time: 135 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break in Module TopLevel_tb at C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv line 100
+# Compile of RegFile.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+run -all
+# xxxx_xxxx
+# ------------------------------------------
+# 08xx_xxxx
+# last instruction =    7 || sim time               125000
+# ** Note: $stop    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv(100)
+#    Time: 135 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break in Module TopLevel_tb at C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv line 100
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.TopLevel_tb(fast)
+# Loading work.TopLevel(fast)
+# Loading work.InstROM(fast)
+# Loading work.ProgCtr(fast)
+# Loading work.LUT_pc(fast)
+# Loading work.LUT_dm(fast)
+# Loading work.LUT_2x_dm(fast)
+# Loading work.Definitions(fast)
+# Loading work.Ctrl_sv_unit(fast)
+# Loading work.Ctrl(fast)
+# Loading work.RegFile(fast)
+# Loading work.ALU_sv_unit(fast)
+# Loading work.ALU(fast)
+# Loading work.DataMem(fast)
+run -all
+# xxxx_xxxx
+# ------------------------------------------
+# 08xx_xxxx
+# last instruction =    7 || sim time               125000
+# ** Note: $stop    : C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv(100)
+#    Time: 135 ns  Iteration: 0  Instance: /TopLevel_tb
+# Break in Module TopLevel_tb at C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv line 100

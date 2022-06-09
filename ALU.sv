@@ -20,13 +20,14 @@ module ALU #(parameter W=8, Ops=4)(
                          Odd           // output odd flag        (Out[0])
                          // you may provide additional status flags, if desired
 );
-
+logic[W-1:0] difference;
 // type enum: used for convenient waveform viewing
 op_mne op_mnemonic;
-assign difference = InputA - Immediate;
+//assign difference = InputA - Immediate;
 assign mask = 8'b1;
 always_comb begin
   // No Op = default
+  difference = InputA - Immediate;
   Out = 0;
 
   case(OP)

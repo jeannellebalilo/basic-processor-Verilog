@@ -89,10 +89,11 @@ boo = '1011'
 lut = '1100'
 bol = '1101'
 msk = '1110'
+end = '111111111'
 
 with (
     open("testprogram.txt", "r") as a,
-    open("machinecode.txt", "w") as b
+    open("testprogramBin.txt", "w") as b
 ):
     line = a.readline()
     while(line):
@@ -198,6 +199,9 @@ with (
             i = 1
             reg1 = 1
             i3 = 1
+        elif inst[0] == '#end':
+            i = 1
+            writeline += end
 
         # Handle first immediate / register
         if i5:

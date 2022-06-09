@@ -50,7 +50,8 @@ always_ff @ (posedge Clk) begin
     for (i=0; i<2**A; i=i+1) begin
       Registers[i] <= '0;
     end
-  end else if (WriteEn) begin
+    JumpRegister = '0;
+  end else if (WriteEn & !Jump) begin
     Registers[Waddr] <= DataIn;
   end else if (LUT2x) begin
     Registers[Waddr] <= LUTdata;
