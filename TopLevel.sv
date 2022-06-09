@@ -123,6 +123,7 @@ InstROM #(.W(9)) IR1(
 );
 `endif
 
+// assign TargSrc = Ctrl_BOL_out ? LUT1_Target_out : Active_InstOut[4:0];
 // this is the program counter module
 ProgCtr PC1 (
   .Reset       (Reset),              // reset to 0
@@ -132,10 +133,10 @@ ProgCtr PC1 (
   .Bol         (Ctrl_BOL_out),
   .SET_flag    (RF_JumpReg_Out),      // Maybe your PC will find this useful
   .Target      (LUT1_Target_out),    // "where to?" or "how far?" during a jump or branch
+  .Immediate   (Active_InstOut[4:0]),
   .ProgCtr     (PC1_ProgCtr_out)     // program count = index to instruction memory
 );
 
-assign TargSrc = Ctrl_BOL_out ? LUT1_Target_out : Active_InstOut[4:0];
 // this is one way to 'expand' the range of jumps available
 LUT_pc LUT1(
   .Addr         (Active_InstOut[4:1]),

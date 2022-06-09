@@ -24,11 +24,10 @@ logic[W-1:0] difference;
 // type enum: used for convenient waveform viewing
 op_mne op_mnemonic;
 //assign difference = InputA - Immediate;
-assign mask = 8'b1;
 always_comb begin
   // No Op = default
   difference = InputA - Immediate;
-  Out = 0;
+  Out = 8'b1;
 
   case(OP)
     ADD : Out = InputA + Loop;        // add with 3-bit immediate
@@ -70,10 +69,11 @@ always_comb begin
 
     MSK : begin
       // if InputB = 6, we want the output to look like 0X00_0000
-      Out = mask;
-      repeat (InputB) begin
+      //Out = mask;
+      repeat (Loop) begin
         Out = {Out[6:0], 1'b0};
       end
+      Out = InputA & Out;
     end
     default : Out = 8'bxxxx_xxxx;       // Quickly flag illegal ALU
   endcase

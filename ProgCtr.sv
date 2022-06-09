@@ -18,6 +18,7 @@ module ProgCtr #(parameter A=10)(
                        Bol,
   input        [7:0]   SET_flag,    // flag from ALU, e.g. Zero, Carry, Overflow, Negative (from ARM)
   input        [A-1:0] Target,      // jump ... "how high?"
+  input        [4:0]   Immediate, 
   output logic [A-1:0] ProgCtr      // the program counter register itself
 );
 
@@ -33,7 +34,7 @@ always_ff @(posedge Clk) begin
     if (Bol)
       ProgCtr <= Target;
     else
-      ProgCtr <= ProgCtr + (Target+1);
+      ProgCtr <= ProgCtr + (Immediate+1);
   end else
     ProgCtr <= ProgCtr+'b1;        // default increment (no need for ARM/MIPS +4 -- why?)
 

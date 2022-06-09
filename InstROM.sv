@@ -89,7 +89,7 @@ initial begin
   // NOTE: This may not work depending on your simulator
   //       e.g. Questa needs the file in path of the application .exe,
   //       it doesn't care where you project code is
-  $readmemb("./testProgramBin.txt",inst_rom);
+  $readmemb("./program1.txt",inst_rom);
 
   // So you are probably better off with an absolute path,
   // but you will have to change this example path when you
