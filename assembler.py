@@ -91,7 +91,7 @@ bol = '1101'
 msk = '1110'
 
 with (
-    open("assembly.txt", "r") as a,
+    open("testprogram.txt", "r") as a,
     open("machinecode.txt", "w") as b
 ):
     line = a.readline()

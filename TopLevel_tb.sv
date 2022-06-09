@@ -43,8 +43,8 @@ initial begin
   #10 Req   = 'b1;
 
   // TODO: fill in the memory locations here
-  DUT.DM1.Core[0] = 'b01010101;
-  DUT.DM1.Core[1] = 'b00000101;
+  /*DUT.DM1.Core[0] = 'b01010101;
+  DUT.DM1.Core[1] = 'b1;
   DUT.DM1.Core[2] = 'b01010101;
   DUT.DM1.Core[3] = 'b00000101;
   DUT.DM1.Core[4] = 'b01010101;
@@ -73,7 +73,7 @@ initial begin
   DUT.DM1.Core[27] = 'b00000101;
   DUT.DM1.Core[28] = 'b01010101;
   DUT.DM1.Core[29] = 'b00000101;
-
+*/
   // launch program in DUT
   #10 Req = 0;
 

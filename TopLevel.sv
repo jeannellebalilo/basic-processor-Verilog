@@ -234,7 +234,7 @@ logic [ 7:0] InA, InB, LUTdm, dmSrc;      // ALU operand inputs
 assign InA = RF1_DataOutA_out;     // connect RF out to ALU in
 assign InB = RF1_DataOutB_out;     // interject switch/mux if needed/desired
 assign LUTdm = {5'b0, Active_InstOut[2:0]};
-assign dmSrc = Ctrl1_LUTdm_out ? LUTdm : RF1_DataOutB_out;
+assign dmSrc = Ctrl1_LUTdm_out ? LUTdm_Target_out : RF1_DataOutB_out;
 
 ALU ALU1 (
   .InputA     (InA),
