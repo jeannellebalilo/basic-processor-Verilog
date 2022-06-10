@@ -19,15 +19,6 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 Top level modules:
 	ProgCtr
 
-} {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/ALU.sv}
-Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling package ALU_sv_unit
--- Importing package Definitions
--- Compiling module ALU
-
-Top level modules:
-	ALU
-
 } {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel.sv}
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling module TopLevel
@@ -72,6 +63,13 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 Top level modules:
 	ProgCtr_tb
 
+} {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/TopLevel_tb.sv}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module TopLevel_tb
+
+Top level modules:
+	TopLevel_tb
+
 } {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/DataMem.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/DataMem.sv}
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling module DataMem
@@ -92,12 +90,5 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 
 Top level modules:
 	LUT_dm
-
-} {} {}} {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_2x_dm.sv} {1 {vlog -work work -vopt -sv -stats=none {C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/LUT_2x_dm.sv}
-Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module LUT_2x_dm
-
-Top level modules:
-	LUT_2x_dm
 
 } {} {}}

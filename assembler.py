@@ -92,8 +92,8 @@ msk = '1110'
 end = '111111111'
 
 with (
-    open("testprogram.txt", "r") as a,
-    open("testprogramBin.txt", "w") as b
+    open("Prog3Assembly.txt", "r") as a,
+    open("program3.txt", "w") as b
 ):
     line = a.readline()
     while(line):

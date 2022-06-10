@@ -1,0 +1,353 @@
+lsr R3, #4
+lsr R3, #4
+swl R3, #0
+add R3, #1
+swl R3, #1
+lsl R3, #1
+add R3, #1
+lsl R3, #1
+add R3, #1
+lsl R3, #1
+add R3, #1
+lsl R3, #1
+swl R3, #2
+add R3, #1
+swl R3, #3
+lsr R0, #4	        #1 JUMP LANDS HERE
+lsr R0, #4
+seq #1
+lwl R3, #3
+lw  R1, R3
+lwl R3, #3
+lw  R2, R3
+msk R1, #0
+lsl R1, #4
+mov R3, R2, #0
+msk R3, #4
+lsr R3, #1
+xor R1, R3
+mov R3, R2, #0
+lsl R3, #5
+lsr R3, #5
+xor R1, R3
+swl R1, #7
+lwl R3, #3
+lw  R1, R3
+lsr R1, #5
+lwl R2, #1
+sw  R1, R2
+lw  R1, R3
+lwl R3, #0
+lw  R2, R3
+lsr R1, #1
+lsl R1, #4
+mov R3, R2, #0
+lsr R3, #5
+lsl R3, #1
+xor R1, R3
+lsl R2, #4
+lsr R2, #7
+xor R1, R2
+lwl R3, #0
+sw  R1, R
+lwl R3, #1
+lw  R1, R3
+mov R2, R1, #0
+mov R3, R1, #0
+lsr R2, #2
+msk R3, #1
+lsr R3, #1
+xor R2, R3
+mov R3, R1, #0
+msk R3, #0
+xor R2, R3
+lwl R3, #0
+lw  R1, R3
+mov R3, R1, #0
+lsr R3, #7
+xor R2, R3
+swl R2, #6
+mov R3, R1, #0
+msk R3, #6
+lsr R3, #6
+xor R2, R3
+mov R3, R1, #0
+msk R3, #5
+lsr R3, #5
+xor R2, R3
+mov R3, R1, #0
+msk R3, #4
+lsr R3, #4
+xor R2, R3
+mov R0, R2, #0
+xor R0, R2
+lsl R2, #1
+lwl R1, #6
+xor R2, R1
+lwl R3, #0
+lw  R1, R3
+mov R3, R1, #0
+lsr R3, #3
+xor R2, R3
+xor R0, R3
+mov R3, R1, #0
+msk R3, #2
+lsr R3, #2
+xor R2, R3
+xor R0, R3
+mov R3, R1, #0
+msk R3, #1
+lsr R3, #1
+xor R2, R3
+xor R0, R3
+mov R1, R2, #0
+msk R1, #0
+xor R0, R1
+lsl R2, #1
+lwl R3, #1
+lw  R1, R3
+mov R3, R1, #0
+lsr R1, #2
+msk R3, #1
+lsr R3, #1
+xor R2, R3
+xor R2, R1
+lwl R3, #0
+lw  R1, R3
+mov R3, R1, #0
+msk R3, #6
+lsr R3, #6
+xor R2, R3
+mov R3, R1, #0
+msk R3, #5
+lsr R3, #5
+xor R2, R3
+mov R3, R1, #0
+msk R3, #3
+lsr R3, #3
+xor R2, R3
+mov R3, R1, #0
+msk R3, #2
+lsr R3, #2
+xor R2, R3
+mov R3, R1, #0
+msk R3, #0
+xor R2, R3
+xor R0, R3
+mov R1, R2, #0
+msk R1, #0
+xor R0, R1
+lsl R2, #1
+lwl R3, #1
+lw  R1, R3
+mov R3, R1, #0
+lsr R1, R1, #2
+msk R3, #0
+xor R2, R3
+xor R2, R1
+lwl R3, #0
+lw  R1, R3
+mov R3, R1, #0
+msk R3, #6
+lsr R3, #6
+xor R2, R3
+mov R3, R1, #0
+msk R3, #4
+lsr R3, #4
+xor R2, R3
+mov R3, R1, #0
+msk R3, #3
+lsr R3, #3
+xor R2, R3
+mov R3, R1, #0
+msk R3, #1
+lsr R3, #1
+xor R2, R3
+msk R1, #0
+xor R2, R1
+mov R1, R2, #0
+msk R1, #0
+xor R0, R1
+lsl R2, #1
+xor R2, R0
+lwl R3, #7
+lw  R1, R3
+xor R1, R2
+mov R2, R1, #0
+mov R3, R1, #0
+msk R2, #0
+lsr R3, #1
+lut R3, R2
+mov R0, R3, #0
+seq #0
+bol #4
+sne #13
+boo #10
+lwl R3, #1
+lw  R1, R3
+lsr R2, #4
+lsr R2, #4
+add R2, #1
+lsl R2, #7
+xor R1, R2
+sw  R1, R3
+seq #13
+bol #4
+lwl R3, #1
+lw  R1, R3
+lsr R2, #4
+lsr R2, #4
+add R2, #1
+lsl R2, #6
+xor R1, R2
+sw  R1, R3
+seq #12
+bol #4
+sne #1
+boo #9
+lwl R3, #0
+lw  R1, R3
+lsr R2, #4
+lsr R2, #4
+add R2, #1
+xor R1, R2
+sw  R1, R3
+seq #1
+bol #4
+sne #2
+boo #10
+lwl R3, #0
+lw  R1, R3
+lsr R2, #4
+lsr R2, #4
+add R2, #1
+lsl R2, #1
+xor R1, R2
+sw  R1, R3
+seq #2
+bol #4
+sne #3
+boo #10
+lwl R3, #0
+lw  R1, R3
+lsr R2, #4
+lsr R2, #4
+add R2, #1
+lsl R2, #2
+xor R1, R2
+sw  R1, R3
+seq #3
+bol #4
+sne #4
+boo #10
+lwl R3, #0
+lw  R1, R3
+lsr R2, #4
+lsr R2, #4
+add R2, #1
+lsl R2, #3
+xor R1, R2
+sw  R1, R3
+seq #4
+bol #4
+sne #5
+boo #10
+lwl R3, #0
+lw  R1, R3
+lsr R2, #4
+lsr R2, #4
+add R2, #1
+lsl R2, #4
+xor R1, R2
+sw  R1, R3
+seq #5
+bol #4
+sne #6
+boo #10
+lwl R3, #0
+lw  R1, R3
+lsr R2, #4
+lsr R2, #4
+add R2, #1
+lsl R2, #5
+xor R1, R2
+sw  R1, R3
+seq #6
+bol #4
+sne #7
+boo #10
+lwl R3, #0
+lw  R1, R3
+lsr R2, #4
+lsr R2, #4
+add R2, #1
+lsl R2, #6
+xor R1, R2
+sw  R1, R3
+seq #7
+bol #4
+sne #8
+boo #10
+lwl R3, #0
+lw  R1, R3
+lsr R2, #4
+lsr R2, #4
+add R2, #1
+lsl R2, #7
+xor R1, R2
+sw  R1, R3
+seq #8
+bol #4
+sne #9
+boo #9
+lwl R3, #1
+lw  R1, R3
+lsr R2, #4
+lsr R2, #4
+add R2, #1
+xor R1, R2
+sw  R1, R3
+seq #9
+bol #4
+sne #10
+boo #10
+lwl R3, #1
+lw  R1, R3
+lsr R2, #4
+lsr R2, #4
+add R2, #1
+lsl R2, #1
+xor R1, R2
+sw  R1, R3
+seq #10
+bol #4
+sne #11
+boo #10
+lwl R3, #1
+lw  R1, R3
+lsr R2, #4
+lsr R2, #4
+add R2, #1
+lsl R2, #2
+xor R1, R2
+sw  R1, R3
+seq #11
+bol #4
+lsr R0, #4	        #4 JUMP LANDS HERE
+lsr R0, #4
+seq #1
+lwl R0, #3
+add R0, #2
+swl R0, #3
+lwl R0, #2
+add R0, #2
+swl R0, #2
+lwl R0, #1
+add R0, #2
+swl R0, #1
+lwl R0, #0
+add R0, #2
+swl R0, #0
+sne #30
+bol #1 
+#RAISE DONE FLAG

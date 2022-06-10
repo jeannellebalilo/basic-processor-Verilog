@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at RegFile.sv(47): always construct contains both blocking and non-blocking assignments File: C:/Users/jeann/Desktop/141LTermProject/basic processor Verilog/RegFile.sv Line: 47
